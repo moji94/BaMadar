@@ -1,4 +1,5 @@
 import '@/styles/globals.css'
+import '../public/fonts/Vazir/font.css'
 import type { AppProps } from 'next/app'
 import { createGlobalStyle } from 'styled-components'
 
