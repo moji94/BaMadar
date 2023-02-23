@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from 'styled-components'
 import Image from 'next/image'
 import {
@@ -111,7 +110,8 @@ const Container = styled.div`
   width: 98%;
   height: 160px;
   background-color: #fff;
-
+  position: fixed;
+  top: 0;
   @media (max-width: 800px) {
     display: none;
   }
