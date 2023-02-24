@@ -108,12 +108,15 @@ export const Header = (): JSX.Element => {
 
 const Container = styled.div`
   width: 98%;
-  height: 160px;
+  height: auto;
   background-color: #fff;
   position: fixed;
   top: 0;
   @media (max-width: 800px) {
     display: none;
+  }
+  @media (max-width: 1100px) {
+    padding-bottom: 10px;
   }
 `
 const HeadT = styled.div`
@@ -253,10 +256,17 @@ const HeadB = styled.div`
   width: 100%;
   height: 40px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   flex-direction: row;
   padding-right: 150px;
+  padding-left: 100px;
+  @media (max-width: 1100px) {
+    height: 80px;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    align-items: flex-end;
+  }
 `
 const Details = styled.div`
   width: 500px;
