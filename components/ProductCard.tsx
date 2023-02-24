@@ -51,6 +51,7 @@ const Container = styled.div`
   flex-direction: column;
   /* margin-left: 30px; */
   /* position: absolute; */
+  z-index: 0;
 `
 
 const Plus = styled.div`
@@ -64,7 +65,6 @@ const Plus = styled.div`
   top: 0;
   right: 0;
   border-radius: 0px 10px 0px 15px;
-  z-index: 10;
 `
 const PicSec = styled.div`
   width: 100%;
