@@ -35,7 +35,7 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 `
 const Wrapper = styled.div`
   width: 85%;
