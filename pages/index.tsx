@@ -1,4 +1,10 @@
-import { Layout, Header, Banner, WonderfulOffer } from '@/components/Index'
+import {
+  Layout,
+  Header,
+  Banner,
+  WonderfulOffer,
+  BamadarOffer,
+} from '@/components/Index'
 
 export default function Home() {
   return (
@@ -6,6 +12,7 @@ export default function Home() {
       <Header></Header>
       <Banner></Banner>
       <WonderfulOffer></WonderfulOffer>
+      <BamadarOffer></BamadarOffer>
     </Layout>
   )
 }
