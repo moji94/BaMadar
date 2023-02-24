@@ -1,3 +1,5 @@
 export * from './Layout'
 export * from './Header'
 export * from './Banner'
+export * from './ProductCard'
+export * from './WonderfulOffer'
