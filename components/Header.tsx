@@ -112,6 +112,7 @@ const Container = styled.div`
   background-color: #fff;
   position: fixed;
   top: 0;
+  z-index: 1;
   @media (max-width: 800px) {
     display: none;
   }
