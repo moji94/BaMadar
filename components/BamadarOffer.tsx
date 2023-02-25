@@ -26,14 +26,6 @@ export const BamadarOffer = (): JSX.Element => {
           pagination={false}
           breakPoints={breakPoints}
         >
-          <Offer>
-            <img
-              src="/images/promo1.png"
-              alt="پیشنهاد ویژه"
-              width={160}
-              height={250}
-            />
-          </Offer>
           <ProductCard
             img={
               'https://my.bamadar.com/uploads/images/2020/3/GAXY2MBwtmیفلا-300.jpg'
@@ -168,18 +160,6 @@ const Wrapper = styled.div`
   }
   .rec.rec-arrow:disabled {
     color: #666;
-  }
-`
-const Offer = styled.div`
-  width: 170px;
-  height: 250px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  .img {
-    width: 160px;
-    height: 250px;
   }
 `
 const ShowAll = styled.div`
