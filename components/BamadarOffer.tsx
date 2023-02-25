@@ -120,7 +120,7 @@ export const BamadarOffer = (): JSX.Element => {
 
 const Container = styled.div`
   width: 100%;
-  height: 300px;
+  height: 310px;
   margin-bottom: 20px;
   display: flex;
   flex-direction: column;
@@ -129,14 +129,14 @@ const Container = styled.div`
 `
 const Title = styled.div`
   width: 87%;
-  height: 25px;
+  height: 35px;
   background-color: rgb(139, 0, 0);
   border-radius: 10px 10px 0 0;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-end;
-  padding-top: 5px;
+  padding-top: 20px;
   img {
     margin-right: 10px;
     margin-left: 10px;
