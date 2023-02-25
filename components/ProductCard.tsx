@@ -49,9 +49,8 @@ const Container = styled.div`
   background-color: #fff;
   border-radius: 10px;
   flex-direction: column;
-  /* margin-left: 30px; */
-  /* position: absolute; */
   z-index: 0;
+  border: 2px solid #eee;
 `
 
 const Plus = styled.div`
@@ -65,6 +64,7 @@ const Plus = styled.div`
   top: 0;
   right: 0;
   border-radius: 0px 10px 0px 15px;
+  z-index: 1;
 `
 const PicSec = styled.div`
   width: 100%;
