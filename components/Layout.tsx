@@ -36,7 +36,7 @@ const Container = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-color: #f7f7f7;
+  background-color: rgb(245, 245, 245);
 `
 const MainContent = styled.div`
   width: 100%;
