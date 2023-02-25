@@ -30,11 +30,11 @@ export const ProductCard = ({
         <p>{title}</p>
       </Details>
       <Price>
-        <div className="red">
-          <p>{dis}%</p>
-        </div>
         <div className="true">
           <p>ریال{price}</p>
+        </div>
+        <div className="red">
+          <p>{dis}%</p>
         </div>
       </Price>
       <Discount>
@@ -51,6 +51,7 @@ const Container = styled.div`
   flex-direction: column;
   z-index: 0;
   border: 2px solid #eee;
+  position: absolute;
 `
 
 const Plus = styled.div`
