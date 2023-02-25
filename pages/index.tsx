@@ -5,6 +5,8 @@ import {
   WonderfulOffer,
   BamadarOffer,
   MostSells,
+  MostPopular,
+  Footer,
 } from '@/components/Index'
 
 export default function Home() {
@@ -15,6 +17,8 @@ export default function Home() {
       <WonderfulOffer></WonderfulOffer>
       <BamadarOffer></BamadarOffer>
       <MostSells></MostSells>
+      <MostPopular></MostPopular>
+      <Footer></Footer>
     </Layout>
   )
 }
