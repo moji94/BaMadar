@@ -4,6 +4,7 @@ import {
   Banner,
   WonderfulOffer,
   BamadarOffer,
+  MostSells,
 } from '@/components/Index'
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
       <Banner></Banner>
       <WonderfulOffer></WonderfulOffer>
       <BamadarOffer></BamadarOffer>
+      <MostSells></MostSells>
     </Layout>
   )
 }

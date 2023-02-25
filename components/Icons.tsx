@@ -176,3 +176,15 @@ export const Arrow = (props: SVGProps<SVGSVGElement>): any => (
     <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"></path>
   </svg>
 )
+export const Most = (props: SVGProps<SVGSVGElement>): any => (
+  <svg
+    width={24}
+    height={24}
+    className="MuiSvgIcon-root"
+    focusable="false"
+    viewBox="0 0 24 24"
+    aria-hidden="true"
+  >
+    <path d="M18.36 9l.6 3H5.04l.6-3h12.72M20 4H4v2h16V4zm0 3H4l-1 5v2h1v6h10v-6h4v6h2v-6h1v-2l-1-5zM6 18v-4h6v4H6z"></path>
+  </svg>
+)
