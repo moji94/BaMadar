@@ -120,7 +120,7 @@ export const MostSells = (): JSX.Element => {
 
 const Container = styled.div`
   width: 100%;
-  height: 330px;
+  height: 340px;
   margin-bottom: 20px;
   display: flex;
   flex-direction: column;
@@ -129,14 +129,14 @@ const Container = styled.div`
 `
 const Title = styled.div`
   width: 87%;
-  height: 30px;
+  height: 40px;
   background-color: #fff;
   border-radius: 10px 10px 0 0;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-end;
-  padding-top: 5px;
+  padding-top: 20px;
   box-shadow: 1px 0px 1px 1px #ddd;
   p {
     color: #333;
