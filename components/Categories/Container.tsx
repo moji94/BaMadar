@@ -6,65 +6,89 @@ export const Container = (): JSX.Element => {
   const [inner, setInner] = useState<string>('')
   const [sit, setSit] = useState<string>('')
   const [stand, setStand] = useState<string>('')
-
+  const array = [
+    {
+      img: '/image/drink.png',
+      title: 'نوشیدنی',
+      subjects:
+        'نوشابه , نوشیدنی انرژی زا , ماء الشعیر و دلستر , آبمیوه , شربت ها , عرقیجات ,آب معدنی',
+    },
+    {
+      img: '/image/protein.png',
+      title: 'مواد پروتئینی',
+      subjects:
+        'نوشابه , نوشیدنی انرژی زا , ماء الشعیر و دلستر , آبمیوه , شربت ها , عرقیجات ,آب معدنی',
+    },
+    {
+      img: '/image/digital.png',
+      title: 'لوازم جانبی موبایل و کامپیوتر',
+      subjects:
+        'کیف و کاور گوشی, انواع پاوربانک ,مونوپاد،سه پایه و پایه نگهدارنده گوشی,هارد و فلش و رم, هدفون و هدست, اسپیکر و میکروفن, مچ بند و ساعت هوشمند, انواع کابل و محافظ کابل و بلوتوث, انواع تبدیل و رم ریدر و خشاب سیم,ماوس و کیبورد,گیم پد و دسته بازی',
+    },
+    {
+      img: '/image/digital.png',
+      title: 'لوازم جانبی موبایل و کامپیوتر',
+      subjects:
+        'کیف و کاور گوشی, انواع پاوربانک ,مونوپاد،سه پایه و پایه نگهدارنده گوشی,هارد و فلش و رم, هدفون و هدست, اسپیکر و میکروفن, مچ بند و ساعت هوشمند, انواع کابل و محافظ کابل و بلوتوث, انواع تبدیل و رم ریدر و خشاب سیم,ماوس و کیبورد,گیم پد و دسته بازی',
+    },
+    {
+      img: '/image/digital.png',
+      title: 'لوازم جانبی موبایل و کامپیوتر',
+      subjects:
+        'کیف و کاور گوشی, انواع پاوربانک ,مونوپاد،سه پایه و پایه نگهدارنده گوشی,هارد و فلش و رم, هدفون و هدست, اسپیکر و میکروفن, مچ بند و ساعت هوشمند, انواع کابل و محافظ کابل و بلوتوث, انواع تبدیل و رم ریدر و خشاب سیم,ماوس و کیبورد,گیم پد و دسته بازی',
+    },
+    {
+      img: '/image/digital.png',
+      title: 'لوازم جانبی موبایل و کامپیوتر',
+      subjects:
+        'کیف و کاور گوشی, انواع پاوربانک ,مونوپاد،سه پایه و پایه نگهدارنده گوشی,هارد و فلش و رم, هدفون و هدست, اسپیکر و میکروفن, مچ بند و ساعت هوشمند, انواع کابل و محافظ کابل و بلوتوث, انواع تبدیل و رم ریدر و خشاب سیم,ماوس و کیبورد,گیم پد و دسته بازی',
+    },
+  ]
   return (
     <InnerContainer inner={inner}>
       <Card inner={inner} className={sit}>
         <div className="out"></div>
         <div className={`in ${stand}`}>
-          <button
-            className="select"
-            onClick={() => {
-              if (inner === '') {
-                setInner('now')
-                setSit('momo')
-                setStand('red')
-              } else {
-                setInner('')
-                setSit('')
-                setStand('')
-              }
-            }}
-          ></button>
-        </div>
-      </Card>
-      <Card inner={inner} className={sit}>
-        <div className="out"></div>
-        <div className={`in ${stand}`}>
-          <button
-            className="select"
-            onClick={() => {
-              if (inner === '') {
-                setInner('now')
-                setSit('momo')
-                setStand('red')
-              } else {
-                setInner('')
-                setSit('')
-                setStand('')
-              }
-            }}
-          ></button>
-        </div>
-      </Card>
-      <Card inner={inner} className={sit}>
-        <div className="out"></div>
-        <div className={`in ${stand}`}>
-          <div className="blue select"></div>
-          <button
-            className="select"
-            onClick={() => {
-              if (inner === '') {
-                setInner('now')
-                setSit('momo')
-                setStand('red')
-              } else {
-                setInner('')
-                setSit('')
-                setStand('')
-              }
-            }}
-          ></button>
+          <InnerCard className="card">
+            <div className={`left ${stand}`}>
+              <img
+                className="select"
+                src="/images/digital.png"
+                width={100}
+                height={100}
+              />
+              <p className="select">لوازم جانبی موبایل و کامپیوتر</p>
+              <h4
+                className="select"
+                onClick={() => {
+                  if (inner === '') {
+                    setInner('now')
+                    setSit('momo')
+                    setStand('red')
+                  } else {
+                    setInner('')
+                    setSit('')
+                    setStand('')
+                  }
+                }}
+              >
+                مشاهده همه
+              </h4>
+            </div>
+            <div className={`right ${stand}`}>
+              <p className="select">ماوس و کیبورد,گیم پد .</p>
+              <p className="select">ماوس و کیبورد,گیم پد .</p>
+              <p className="select">ماوس و کیبورد,گیم پد .</p>
+              <p className="select">ماوس و کیبورد,گیم پد .</p>
+              <p className="select">ماوس و کیبورد,گیم پد .</p>
+              <p className="select">ماوس و کیبورد,گیم پد .</p>
+              <p className="select">ماوس و کیبورد,گیم پد .</p>
+              <p className="select">ماوس و کیبورد,گیم پد .</p>
+              <p className="select">ماوس و کیبورد,گیم پد .</p>
+              <p className="select">ماوس و کیبورد,گیم پد .</p>
+              <p className="select">ماوس و کیبورد,گیم پد .</p>
+            </div>
+          </InnerCard>
         </div>
       </Card>
       <CategoryCard></CategoryCard>
@@ -86,63 +110,44 @@ const InnerContainer = styled.div<{ inner: any }>`
   ${({ inner }) =>
     inner === 'now'
       ? css`
-          /* background-color: red; */
-          /* height: 500px; */
-          *:not(.momo, .out, .in, .select) {
+          *:not(.select, .in, .out, .momo, .left, .right, .card) {
             filter: blur(5px);
           }
           .in {
-            height: 500px;
-            width: 700px;
+            /* height: 500px; */
             position: absolute;
             z-index: 20;
+          }
+          .right {
+            height: auto;
           }
         `
       : css``}
 `
 const Card = styled.div<{ inner: string }>`
-  width: 350px;
-  height: 200px;
-  border: 1px solid #333;
+  width: 361px;
+  height: 164px;
+  box-shadow: 5px 5px 5px #ddd;
+  border-radius: 20px;
   margin: 10px;
   display: flex;
   justify-content: center;
   align-items: flex-start;
   transition: all 500ms;
   position: relative;
-  .red {
-    width: 50px;
-    height: 50px;
-    background-color: purple;
-  }
   .out {
-    background-color: aqua;
+    width: 100%;
+    height: 100%;
     position: relative;
   }
   .in {
-    width: 150px;
-    height: 150px;
+    width: 100%;
+    height: auto;
     position: absolute;
-    background-color: orange;
   }
   .select {
-    background-color: #333;
   }
-  .blue {
-    background-color: blue;
-  }
-  div {
-    width: 90%;
-    height: 90%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  button {
-    width: 50px;
-    height: 50px;
-    z-index: 1;
-  }
+
   ${({ inner }) =>
     inner === 'now'
       ? css`
@@ -151,8 +156,55 @@ const Card = styled.div<{ inner: string }>`
             z-index: 21;
             transition: all 500ms;
           }
+          .right {
+            height: auto;
+          }
         `
       : css``}
+`
+const InnerCard = styled.div`
+  width: 100%;
+  height: 164px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  div {
+    width: 50%;
+    height: 164px;
+  }
+  .left {
+    background-color: #fff;
+    display: flex;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 20px 0 0 20px;
+
+    p {
+      color: #333;
+      text-align: center;
+      font-size: 14px;
+    }
+    h4 {
+      color: rgb(38, 161, 195);
+      cursor: pointer;
+      margin-top: 5px;
+    }
+  }
+  .right {
+    background-color: orange;
+    border-radius: 0 20px 20px 0;
+    padding-top: 5px;
+    overflow: hidden;
+    p {
+      color: #333;
+      text-align: right;
+      margin-right: 10px;
+      margin-top: 5px;
+    }
+  }
 `
 
 // import styled, { css } from 'styled-components'
