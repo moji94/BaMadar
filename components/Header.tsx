@@ -10,6 +10,8 @@ import {
   Shop,
   Ticket,
 } from './Icons'
+import Link from 'next/link'
+import router from 'next/router'
 
 export const Header = (): JSX.Element => {
   return (
@@ -34,6 +36,7 @@ export const Header = (): JSX.Element => {
             alt="Picture of the author"
             width={45}
             height={45}
+            onClick={() => router.push('/')}
           />
         </HeadTLogo>
       </HeadT>
@@ -46,11 +49,11 @@ export const Header = (): JSX.Element => {
           <p>باشگاه مشتریان</p>
           <Ticket />
         </Club>
-        <Category>
+        <Category onClick={() => router.push('/categories')}>
           <p>دسته بندی ها</p>
           <Categories />
         </Category>
-        <Madar>
+        <Madar onClick={() => router.push('/')}>
           <p>فروشگاه بامادر</p>
           <Home />
         </Madar>
@@ -200,6 +203,7 @@ const Madar = styled.div`
   align-items: center;
   flex-direction: row;
   padding-right: 10px;
+  cursor: pointer;
   p {
     margin-right: 5px;
     font-size: 14px;
@@ -214,6 +218,7 @@ const Category = styled.div`
   align-items: center;
   flex-direction: row;
   padding-right: 10px;
+  cursor: pointer;
   p {
     margin-right: 5px;
     font-size: 14px;
