@@ -37,6 +37,7 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   background-color: rgb(245, 245, 245);
+  position: absolute;
 `
 const MainContent = styled.div`
   width: 100%;
