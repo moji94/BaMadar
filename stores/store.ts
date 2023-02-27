@@ -1,6 +1,6 @@
 import { atomWithStorage } from 'jotai/utils'
 
-export const componentActivation = atomWithStorage<'active' | 'deactive'>(
+export const componentActivation = atomWithStorage<'now' | ''>(
   '@activation',
-  'deactive',
+  '',
 )
