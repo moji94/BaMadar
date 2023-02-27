@@ -3,63 +3,132 @@ import styled, { css } from 'styled-components'
 import { useAtom } from 'jotai'
 import { componentActivation } from 'stores/store'
 
-export const CategoryCard = (): JSX.Element => {
+interface Props {
+  img: string
+  title: string
+  subjects: any
+}
+
+export const CategoryCard = ({ img, title, subjects }: Props): JSX.Element => {
   const [ac, setAc] = useAtom(componentActivation)
-  const [inner, setInner] = useState<string>('')
+  const [sit, setSit] = useState<string>('')
+  const [stand, setStand] = useState<string>('')
   return (
-    <Container inner={inner} className="loading">
-      <div></div>
-      <div className="po"></div>
-      <button
-        onClick={() => {
-          if (ac === 'deactive') {
-            setAc('active')
-            setInner('now')
-          } else {
-            setAc('deactive')
-            setInner('')
-          }
-        }}
-      ></button>
-    </Container>
+    <Card ac={ac} className={sit}>
+      <div className="out"></div>
+      <div className={`in ${stand}`}>
+        <InnerCard className="card">
+          <div className={`left ${stand}`}>
+            <img className="select" src={img} width={100} height={100} />
+            <p className="select">{title}</p>
+            <h4
+              className="select"
+              onClick={() => {
+                if (ac === '') {
+                  setAc('now')
+                  setSit('momo')
+                  setStand('red')
+                } else {
+                  setAc('')
+                  setSit('')
+                  setStand('')
+                }
+              }}
+            >
+              مشاهده همه
+            </h4>
+          </div>
+          <div className={`right ${stand}`}>
+            {subjects[0].split(',').map((data: any, index: number) => (
+              <p className="select" key={`${index}`}>
+                {`${data} -`}
+              </p>
+            ))}
+          </div>
+        </InnerCard>
+      </div>
+    </Card>
   )
 }
 
-const Container = styled.div<{ inner: string }>`
-  width: 350px;
-  height: auto;
-  border: 1px solid #333;
-  margin: 8px;
+const Card = styled.div<{ ac: string }>`
+  width: 355px;
+  height: 164px;
+  box-shadow: 5px 5px 5px #ddd;
+  border-radius: 20px;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
   transition: all 500ms;
-  background-color: aqua;
   position: relative;
-
-  div {
-    width: 200px;
-    height: 200px;
-    background-color: orange;
-    position: absolute;
-    bottom: 0;
-    z-index: 0;
+  .out {
+    width: 100%;
+    height: 100%;
+    position: relative;
   }
-
-  button {
-    width: 50px;
-    height: 50px;
-    background-color: #333;
-    z-index: 1;
+  .in {
+    width: 100%;
+    height: auto;
     position: absolute;
   }
-  ${({ inner }) =>
-    inner === 'now'
+  .select {
+  }
+
+  ${({ ac }) =>
+    ac === 'now'
       ? css`
-          z-index: 10;
-          height: 500px;
-          *:not(.po) {
-            filter: blur(10px);
+          .red {
+            height: 500px;
+            z-index: 21;
+            transition: all 500ms;
+            box-shadow: 5px 5px 5px #ddd;
+            border-radius: 25px;
           }
         `
-      : css`
-          height: 300px;
-        `}
+      : css``}
+`
+const InnerCard = styled.div`
+  width: 100%;
+  height: 164px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  transition: all 500ms;
+  div {
+    width: 50%;
+    height: 164px;
+  }
+  .left {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 20px 0 0 20px;
+
+    p {
+      color: #333;
+      text-align: center;
+      font-size: 14px;
+    }
+    h4 {
+      color: rgb(38, 161, 195);
+      cursor: pointer;
+      margin-top: 5px;
+    }
+  }
+  .right {
+    background-color: #fff;
+    border-radius: 0 20px 20px 0;
+    padding-top: 5px;
+    overflow: hidden;
+    p {
+      color: #333;
+      text-align: right;
+      margin-right: 10px;
+      margin-top: 5px;
+    }
+  }
 `
