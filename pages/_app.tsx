@@ -24,6 +24,7 @@ const GlobalStyle = createGlobalStyle`
       font-family: Vazir !important;
 
     }
+    background-color: rgb(245, 245, 245);
   }
   .swal2-confirm {
     background-color: #0095ff !important;
