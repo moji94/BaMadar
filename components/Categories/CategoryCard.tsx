@@ -2,6 +2,7 @@ import { useState } from 'react'
 import styled, { css } from 'styled-components'
 import { useAtom } from 'jotai'
 import { componentActivation } from 'stores/store'
+import router from 'next/router'
 
 interface Props {
   img: string
@@ -40,7 +41,11 @@ export const CategoryCard = ({ img, title, subjects }: Props): JSX.Element => {
           </div>
           <div className={`right ${stand}`}>
             {subjects[0].split(',').map((data: any, index: number) => (
-              <p className="select" key={`${index}`}>
+              <p
+                className="select pointer"
+                key={`${index}`}
+                onClick={() => router.push('/products')}
+              >
                 {`${data} -`}
               </p>
             ))}
@@ -129,6 +134,9 @@ const InnerCard = styled.div`
       text-align: right;
       margin-right: 10px;
       margin-top: 5px;
+    }
+    .pointer {
+      cursor: pointer;
     }
   }
 `
