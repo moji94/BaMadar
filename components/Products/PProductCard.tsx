@@ -1,7 +1,7 @@
 import styled from 'styled-components'
-import { PlusIcon } from '../Icons'
 import { useAtom } from 'jotai'
 import { productActivation } from 'stores/store'
+import { Plus } from '../Plus'
 
 interface Props {
   img?: any
@@ -23,9 +23,7 @@ export const PProductCard = ({
   const [ac, setAc] = useAtom(productActivation)
   return (
     <Card>
-      <Plus>
-        <PlusIcon />
-      </Plus>
+      <Plus title={title}></Plus>
       <InnerCard>
         <PicSec>
           <img src={img} alt={alt} className="pic" />
@@ -82,18 +80,18 @@ const InnerCard = styled.div`
   justify-content: flex-start;
   transition: all 500ms;
 `
-const Plus = styled.div`
-  width: 31.6px;
-  height: 50px;
-  background-color: rgb(23, 155, 191);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 0;
-  right: 0;
-  border-radius: 0px 10px 0px 10px;
-`
+// const Plus = styled.div`
+//   width: 31.6px;
+//   height: 50px;
+//   background-color: rgb(23, 155, 191);
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   position: absolute;
+//   top: 0;
+//   right: 0;
+//   border-radius: 0px 10px 0px 10px;
+// `
 const PicSec = styled.div`
   width: 75%;
   height: 50%;

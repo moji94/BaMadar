@@ -20,18 +20,7 @@ const GlobalStyle = createGlobalStyle`
   }
   body {
     font-family: Vazir !important;
-    .swal2-styled {
-      font-family: Vazir !important;
-
-    }
     background-color: rgb(245, 245, 245);
   }
-  .swal2-confirm {
-    background-color: #0095ff !important;
-  }
-  .swal2-deny {
-    background-color: #fff !important;
-    border: 1px solid #0095ff !important;
-    color: #0095ff !important;
-  }
+  
 `

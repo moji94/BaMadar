@@ -168,6 +168,25 @@ export const PContainer = (): JSX.Element => {
         </div>
       ))}
       <Single className="cardHolder" ac={ac}>
+        <div className="select close">
+          <img
+            className="select"
+            src="./images/close.svg"
+            width={24}
+            height={24}
+            onClick={() => {
+              setPdata({
+                img: '',
+                alt: '',
+                title: '',
+                price: 0,
+                dis: 0,
+                orgPrice: 0,
+              })
+              setAc('')
+            }}
+          />
+        </div>
         <Picsec className="select">
           <img src={pdata?.img} alt={pdata?.alt} className="momo" />
         </Picsec>
@@ -208,22 +227,6 @@ export const PContainer = (): JSX.Element => {
                 className="select"
               />
             </div>
-            <p
-              className="select"
-              onClick={() => {
-                setPdata({
-                  img: '',
-                  alt: '',
-                  title: '',
-                  price: 0,
-                  dis: 0,
-                  orgPrice: 0,
-                })
-                setAc('')
-              }}
-            >
-              بازگشت
-            </p>
           </div>
         </Details>
       </Single>
@@ -275,6 +278,19 @@ const Single = styled.div<{ ac: any }>`
   transition: all 1000ms;
   background-color: rgba(255, 255, 255, 0.6);
   border-radius: 10px;
+  .close {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    position: absolute;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 15px;
+    padding-top: 5px;
+    img {
+      cursor: pointer;
+    }
+  }
   ${({ ac }) =>
     ac === ''
       ? css`
@@ -327,7 +343,7 @@ const Details = styled.div`
   .left {
     width: 40%;
     height: 100%;
-    background-color: #c60000;
+    background-color: rgb(236, 59, 79);
     position: absolute;
     left: 0;
     border-radius: 15px;
@@ -344,7 +360,7 @@ const Details = styled.div`
   .right {
     width: 70%;
     height: 100%;
-    background-color: #eee;
+    background-color: rgba(255, 255, 255);
     position: absolute;
     right: 0;
     border-radius: 15px;
@@ -376,7 +392,7 @@ const Details = styled.div`
   }
   .order {
     /* color: rgb(127, 127, 152); */
-    color: rgb(1, 172, 219);
+    color: rgb(0, 152, 194);
     font-size: 20px;
     padding-right: 10px;
   }
