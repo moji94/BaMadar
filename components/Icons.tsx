@@ -163,6 +163,36 @@ export const PlusIcon = (props: SVGProps<SVGSVGElement>): any => (
     />
   </svg>
 )
+export const BluePlus = (props: SVGProps<SVGSVGElement>): any => (
+  <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none">
+    <path
+      d="M5 12H19"
+      stroke="rgb(23, 155, 191)"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M12 5L12 19"
+      stroke="rgb(23, 155, 191)"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+)
+export const BlueMinus = (props: SVGProps<SVGSVGElement>): any => (
+  <svg
+    width={20}
+    height={20}
+    focusable="false"
+    viewBox="0 0 24 24"
+    aria-hidden="true"
+    fill="rgb(23, 155, 191)"
+  >
+    <path d="M19 13H5v-2h14v2z"></path>
+  </svg>
+)
 export const Arrow = (props: SVGProps<SVGSVGElement>): any => (
   <svg
     className="MuiSvgIcon-root"
@@ -233,5 +263,57 @@ export const Copy = (props: SVGProps<SVGSVGElement>): any => (
     aria-hidden="true"
   >
     <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm-1 4H8c-1.1 0-1.99.9-1.99 2L6 21c0 1.1.89 2 1.99 2H19c1.1 0 2-.9 2-2V11l-6-6zM8 21V7h6v5h5v9H8z"></path>
+  </svg>
+)
+export const Trash = (props: SVGProps<SVGSVGElement>): any => (
+  <svg
+    width={24}
+    height={24}
+    focusable="false"
+    viewBox="0 0 24 24"
+    aria-hidden="true"
+    fill="rgb(23, 155, 191)"
+  >
+    <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM8 9h8v10H8V9zm7.5-5l-1-1h-5l-1 1H5v2h14V4h-3.5z"></path>
+  </svg>
+)
+export const Close = (props: SVGProps<SVGSVGElement>): any => (
+  <svg
+    width="800px"
+    height="800px"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g clip-path="url(#clip0_429_11081)">
+      <circle
+        cx="12"
+        cy="11.9999"
+        r="9"
+        stroke="#AC2075"
+        stroke-width="2.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M14 10.0001L10 14.0001"
+        stroke="#AC2075"
+        stroke-width="2.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M10 10.0001L14 14.0001"
+        stroke="#AC2075"
+        stroke-width="2.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </g>
+    <defs>
+      <clipPath id="clip0_429_11081">
+        <rect width="24" height="24" fill="white" />
+      </clipPath>
+    </defs>
   </svg>
 )
