@@ -3,6 +3,7 @@ import { PProductCard } from './PProductCard'
 import { useAtom } from 'jotai'
 import { productActivation } from 'stores/store'
 import { useState } from 'react'
+import { Copy, Share } from '../Icons'
 
 interface pDataType {
   img: string
@@ -15,7 +16,7 @@ interface pDataType {
 export const PContainer = (): JSX.Element => {
   const [ac, setAc] = useAtom(productActivation)
   const [pdata, setPdata] = useState<undefined | pDataType>(undefined)
-  console.log(pdata?.price)
+  console.log(ac)
   const array = [
     {
       img: '/images/drink.png',
@@ -143,7 +144,7 @@ export const PContainer = (): JSX.Element => {
     <InnerContainer ac={ac}>
       {array.map((data, index) => (
         <div
-          className="select"
+          className="cardHolder"
           onClick={() => {
             setPdata({
               img: data.img.toString(),
@@ -166,24 +167,65 @@ export const PContainer = (): JSX.Element => {
           ></PProductCard>
         </div>
       ))}
-      <Single className="select">
-        <p className="select">{pdata !== undefined && pdata.price}</p>
-        <button
-          className="select"
-          onClick={() => {
-            setPdata({
-              img: '',
-              alt: '',
-              title: '',
-              price: 0,
-              dis: 0,
-              orgPrice: 0,
-            })
-            setAc('')
-          }}
-        >
-          here
-        </button>
+      <Single className="cardHolder" ac={ac}>
+        <Picsec className="select">
+          <img src={pdata?.img} alt={pdata?.alt} className="momo" />
+        </Picsec>
+        <Details className="select">
+          <div className=" in select">
+            <h2 className="select">{pdata?.title}</h2>
+          </div>
+          <div className="select in price">
+            <button className="card">افزودن به سبد</button>
+            <div className="select out">
+              <div className="left">
+                <p className="select">{pdata?.dis}%</p>
+              </div>
+              <div className="select right">
+                <h3 className="select">ریال{pdata?.price}</h3>
+              </div>
+            </div>
+          </div>
+          <div className="select in">
+            <p className="select org">{pdata?.orgPrice}</p>
+          </div>
+          <div className="select in">
+            <p className="select numb">0عدد</p>
+            <p className="select order">:مقدار سفارش</p>
+          </div>
+          <div className="in last select">
+            <div className="share select">
+              <img
+                src="./images/share.svg"
+                width={24}
+                height={24}
+                className="select"
+              />
+              <img
+                src="./images/copy.svg"
+                width={24}
+                height={24}
+                className="select"
+              />
+            </div>
+            <p
+              className="select"
+              onClick={() => {
+                setPdata({
+                  img: '',
+                  alt: '',
+                  title: '',
+                  price: 0,
+                  dis: 0,
+                  orgPrice: 0,
+                })
+                setAc('')
+              }}
+            >
+              بازگشت
+            </p>
+          </div>
+        </Details>
       </Single>
     </InnerContainer>
   )
@@ -199,28 +241,160 @@ const InnerContainer = styled.div<{ ac: any }>`
   flex-wrap: wrap;
   position: relative;
   transition: all 500ms;
-  /* .select {
-    width: auto;
-    height: auto;
-  } */
   ${({ ac }) =>
     ac === 'now'
       ? css`
-          *:not(.select, .in, .out, .momo, .left, .right, .card) {
+          *:not(
+              .select,
+              .in,
+              .out,
+              .momo,
+              .left,
+              .right,
+              .card,
+              .org,
+              .share,
+              .cardHolder,
+              .price,
+              .last
+            ) {
             filter: blur(5px);
-            background-color: rgba(70, 70, 70, 0);
-          }
-          .in {
-            position: absolute;
-            z-index: 20;
           }
         `
       : css``}
 `
-const Single = styled.div`
-  width: 50%;
+const Single = styled.div<{ ac: any }>`
+  width: 45%;
   height: 70%;
-  background-color: aqua;
   position: absolute;
-  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  box-shadow: 5px 5px 5px #ddd;
+  background-color: #fff;
+  border-radius: 10px;
+  ${({ ac }) =>
+    ac === ''
+      ? css`
+          display: none;
+        `
+      : css``}
+`
+const Picsec = styled.div`
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .momo {
+    width: 40%;
+    height: 100%;
+  }
+`
+const Details = styled.div`
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  .in {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding-right: 20px;
+  }
+  .price {
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 30px;
+  }
+  h2 {
+    color: #333;
+  }
+  .out {
+    width: 300px;
+    height: 30px;
+    position: relative;
+    border-radius: 15px;
+  }
+  .left {
+    width: 40%;
+    height: 100%;
+    background-color: red;
+    position: absolute;
+    left: 0;
+    border-radius: 15px;
+    border: 0.5px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 10%;
+    p {
+      color: #ddd;
+      text-align: center;
+    }
+  }
+  .right {
+    width: 70%;
+    height: 100%;
+    background-color: #eee;
+    position: absolute;
+    right: 0;
+    border-radius: 15px;
+    border: 0.5px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    h3 {
+      color: #333;
+    }
+  }
+  .card {
+    width: 150px;
+    height: 30px;
+    background-color: rgb(23, 155, 191);
+    cursor: pointer;
+    border-radius: 15px;
+    border: none;
+    color: #eee;
+    font-family: 'Vazir';
+    font-size: 14px;
+  }
+  .org {
+    text-decoration-line: line-through;
+    color: rgb(127, 127, 152);
+    font-size: 20px;
+    padding-right: 90px;
+  }
+  .order {
+    color: rgb(127, 127, 152);
+    font-size: 20px;
+    padding-right: 10px;
+  }
+  .numb {
+    color: #000;
+    font-size: 20px;
+    padding-right: 10px;
+  }
+  .last {
+    justify-content: space-between;
+    padding-left: 20px;
+    p {
+      color: #333;
+      cursor: pointer;
+    }
+  }
+  .share {
+    width: 70px;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+  }
 `

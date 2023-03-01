@@ -94,7 +94,6 @@ const Plus = styled.div`
   top: 0;
   right: 0;
   border-radius: 0px 10px 0px 10px;
-  z-index: 1;
 `
 const PicSec = styled.div`
   width: 75%;
