@@ -240,7 +240,7 @@ const InnerContainer = styled.div<{ ac: any }>`
   padding-top: 170px;
   flex-wrap: wrap;
   position: relative;
-  transition: all 500ms;
+  transition: all 2000ms;
   ${({ ac }) =>
     ac === 'now'
       ? css`
@@ -271,13 +271,15 @@ const Single = styled.div<{ ac: any }>`
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  box-shadow: 5px 5px 5px #ddd;
-  background-color: #fff;
+  box-shadow: 3px 3px 3px #ccc;
+  transition: all 1000ms;
+  background-color: rgba(255, 255, 255, 0.6);
   border-radius: 10px;
   ${({ ac }) =>
     ac === ''
       ? css`
           display: none;
+          transition: all 1000ms;
         `
       : css``}
 `
@@ -325,17 +327,17 @@ const Details = styled.div`
   .left {
     width: 40%;
     height: 100%;
-    background-color: red;
+    background-color: #c60000;
     position: absolute;
     left: 0;
     border-radius: 15px;
-    border: 0.5px solid #ddd;
+    border: 2px solid #666;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     padding-left: 10%;
     p {
-      color: #ddd;
+      color: #fff;
       text-align: center;
     }
   }
@@ -346,7 +348,7 @@ const Details = styled.div`
     position: absolute;
     right: 0;
     border-radius: 15px;
-    border: 0.5px solid #ddd;
+    border: 2px solid #666;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -357,27 +359,29 @@ const Details = styled.div`
   .card {
     width: 150px;
     height: 30px;
-    background-color: rgb(23, 155, 191);
+    background-color: rgb(0, 200, 255);
     cursor: pointer;
     border-radius: 15px;
-    border: none;
-    color: #eee;
+    border: 2px solid #666;
+    color: #333;
     font-family: 'Vazir';
     font-size: 14px;
   }
   .org {
     text-decoration-line: line-through;
-    color: rgb(127, 127, 152);
+    /* color: rgb(127, 127, 152); */
+    color: #777;
     font-size: 20px;
     padding-right: 90px;
   }
   .order {
-    color: rgb(127, 127, 152);
+    /* color: rgb(127, 127, 152); */
+    color: rgb(1, 172, 219);
     font-size: 20px;
     padding-right: 10px;
   }
   .numb {
-    color: #000;
+    color: #333;
     font-size: 20px;
     padding-right: 10px;
   }
@@ -385,7 +389,7 @@ const Details = styled.div`
     justify-content: space-between;
     padding-left: 20px;
     p {
-      color: #333;
+      color: #fff;
       cursor: pointer;
     }
   }
