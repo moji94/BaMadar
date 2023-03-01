@@ -73,14 +73,15 @@ export const PContainer = (): JSX.Element => {
       alt: 'awdkpawkpdk',
       dis: 10,
     },
+
     {
-      img: '/images/drink.png',
-      title: 'نوشیدنی',
+      img: '/images/protein.png',
+      title: 'مواد پروتئینی',
       subjects: [
         'نوشابه , نوشیدنی انرژی زا , ماء الشعیر و دلستر , آبمیوه , شربت ها , عرقیجات ,آب معدنی',
       ],
-      price: 12000,
-      orgPrice: 32000,
+      price: 77000,
+      orgPrice: 80000,
       alt: 'awdkpawkpdk',
       dis: 10,
     },
@@ -96,27 +97,28 @@ export const PContainer = (): JSX.Element => {
       dis: 10,
     },
     {
-      img: '/images/digital.png',
-      title: 'لوازم جانبی موبایل و کامپیوتر',
+      img: '/images/protein.png',
+      title: 'مواد پروتئینی',
       subjects: [
-        'کیف و کاور گوشی, انواع پاوربانک ,مونوپاد،سه پایه و پایه نگهدارنده گوشی,هارد و فلش و رم, هدفون و هدست, اسپیکر و میکروفن, مچ بند و ساعت هوشمند, انواع کابل و محافظ کابل و بلوتوث, انواع تبدیل و رم ریدر و خشاب سیم,ماوس و کیبورد,گیم پد و دسته بازی',
+        'نوشابه , نوشیدنی انرژی زا , ماء الشعیر و دلستر , آبمیوه , شربت ها , عرقیجات ,آب معدنی',
       ],
-      price: 53000,
-      orgPrice: 60000,
+      price: 77000,
+      orgPrice: 80000,
       alt: 'awdkpawkpdk',
       dis: 10,
     },
     {
-      img: '/images/digital.png',
-      title: 'لوازم جانبی موبایل و کامپیوتر',
+      img: '/images/protein.png',
+      title: 'مواد پروتئینی',
       subjects: [
-        'کیف و کاور گوشی, انواع پاوربانک ,مونوپاد،سه پایه و پایه نگهدارنده گوشی,هارد و فلش و رم, هدفون و هدست, اسپیکر و میکروفن, مچ بند و ساعت هوشمند, انواع کابل و محافظ کابل و بلوتوث, انواع تبدیل و رم ریدر و خشاب سیم,ماوس و کیبورد,گیم پد و دسته بازی',
+        'نوشابه , نوشیدنی انرژی زا , ماء الشعیر و دلستر , آبمیوه , شربت ها , عرقیجات ,آب معدنی',
       ],
-      price: 34000,
-      orgPrice: 55000,
+      price: 77000,
+      orgPrice: 80000,
       alt: 'awdkpawkpdk',
       dis: 10,
     },
+
     {
       img: '/images/digital.png',
       title: 'لوازم جانبی موبایل و کامپیوتر',
@@ -268,7 +270,7 @@ const InnerContainer = styled.div<{ ac: any }>`
 `
 const Single = styled.div<{ ac: any }>`
   width: 45%;
-  height: 70%;
+  height: 525px;
   position: absolute;
   display: flex;
   flex-direction: column;

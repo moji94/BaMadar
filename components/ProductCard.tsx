@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { PlusIcon } from './Icons'
+import { Plus } from './Plus'
 
 interface Props {
   img?: any
@@ -20,9 +21,7 @@ export const ProductCard = ({
 }: Props): JSX.Element => {
   return (
     <Container>
-      <Plus>
-        <PlusIcon />
-      </Plus>
+      <Plus title={title}></Plus>
       <PicSec>
         <img src={img} alt={alt} className="pic" />
       </PicSec>
@@ -51,27 +50,12 @@ const Container = styled.div`
   flex-direction: column;
   z-index: 0;
   border: 2px solid #eee;
-  position: absolute;
-`
-
-const Plus = styled.div`
-  width: 31.6px;
-  height: 50px;
-  background-color: rgb(23, 155, 191);
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: relative;
-  top: 0;
-  right: 0;
-  border-radius: 0px 10px 0px 15px;
-  z-index: 1;
 `
 const PicSec = styled.div`
   width: 100%;
   height: 50%;
-  position: relative;
-  top: -50px;
+
   .pic {
     width: 100%;
     height: 100%;
@@ -82,12 +66,13 @@ const PicSec = styled.div`
 `
 const Details = styled.div`
   width: 100%;
-  height: 50px;
-  position: relative;
-  top: -30px;
-  display: block;
+  height: 60px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
   text-align: right;
   padding-right: 10px;
+
   p {
     color: #333;
     font-size: 13px;
@@ -95,12 +80,12 @@ const Details = styled.div`
 `
 const Price = styled.div`
   width: 100%;
-  height: 25px;
-  position: relative;
+  height: 35px;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  top: -30px;
+  align-items: center;
+  padding-top: 10px;
   .true {
     text-align: right;
     p {
@@ -120,8 +105,6 @@ const Price = styled.div`
 const Discount = styled.div`
   width: 100%;
   height: 25px;
-  position: relative;
-  top: -30px;
   p {
     color: #666;
     font-size: 12px;
