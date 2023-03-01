@@ -26,19 +26,7 @@ export const PProductCard = ({
       <Plus>
         <PlusIcon />
       </Plus>
-      <InnerCard
-        onClick={() => {
-          if (ac === '') {
-            setAc('now')
-            // setSit('momo')
-            // setStand('red')
-          } else {
-            setAc('')
-            // setSit('')
-            // setStand('')
-          }
-        }}
-      >
+      <InnerCard>
         <PicSec>
           <img src={img} alt={alt} className="pic" />
         </PicSec>
@@ -54,6 +42,17 @@ export const PProductCard = ({
           </div>
         </Price>
         <Discount>
+          <h5
+            onClick={() => {
+              if (ac === '') {
+                setAc('now')
+              } else {
+                setAc('')
+              }
+            }}
+          >
+            جزییات
+          </h5>
           <p>{orgPrice}</p>
         </Discount>
       </InnerCard>
@@ -119,16 +118,16 @@ const Details = styled.div`
 `
 const Price = styled.div`
   width: 100%;
-  height: 45px;
+  height: 40px;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  padding-top: 10px;
+  padding-top: 5px;
   .true {
     text-align: right;
     h4 {
-      font-size: 13px;
+      font-size: 14px;
       color: #333;
       text-align: right;
     }
@@ -145,11 +144,20 @@ const Price = styled.div`
 const Discount = styled.div`
   width: 100%;
   height: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 5px;
   p {
     color: #666;
     font-size: 12px;
     text-align: right;
     padding-right: 25px;
     text-decoration-line: line-through;
+  }
+  h5 {
+    color: rgb(23, 155, 191);
+    padding-left: 15px;
+    cursor: pointer;
   }
 `
