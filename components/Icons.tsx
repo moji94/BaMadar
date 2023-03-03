@@ -317,3 +317,26 @@ export const Close = (props: SVGProps<SVGSVGElement>): any => (
     </defs>
   </svg>
 )
+export const Telegram = (props: SVGProps<SVGSVGElement>): any => (
+  <svg
+    width={30}
+    height={30}
+    focusable="false"
+    viewBox="0 0 24 24"
+    aria-hidden="true"
+  >
+    <path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"></path>
+  </svg>
+)
+export const Auth = (props: SVGProps<SVGSVGElement>): any => (
+  <svg
+    width={30}
+    height={30}
+    focusable="false"
+    viewBox="0 0 24 24"
+    aria-hidden="true"
+    {...props}
+  >
+    <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm7 10c0 4.52-2.98 8.69-7 9.93-4.02-1.24-7-5.41-7-9.93V6.3l7-3.11 7 3.11V11zm-11.59.59L6 13l4 4 8-8-1.41-1.42L10 14.17z"></path>
+  </svg>
+)
