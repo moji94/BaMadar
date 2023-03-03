@@ -45,7 +45,7 @@ export const Header = (): JSX.Element => {
           <p>تخفیفات شگفت انگیز</p>
           <Discounts />
         </Discount>
-        <Club>
+        <Club onClick={() => router.push('/costumersclub')}>
           <p>باشگاه مشتریان</p>
           <Ticket />
         </Club>
@@ -112,11 +112,13 @@ export const Header = (): JSX.Element => {
 const Container = styled.div`
   width: 98%;
   height: auto;
+  box-shadow: 0px 2px 3px #ddd;
   background-color: #fff;
   position: fixed;
   top: 0;
   z-index: 1;
   @media (max-width: 800px) {
+    transition: all 500px;
     display: none;
   }
   @media (max-width: 1100px) {
@@ -233,6 +235,7 @@ const Club = styled.div`
   align-items: center;
   flex-direction: row;
   padding-right: 10px;
+  cursor: pointer;
   p {
     margin-right: 5px;
     font-size: 14px;
