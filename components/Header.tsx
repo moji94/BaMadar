@@ -41,7 +41,7 @@ export const Header = (): JSX.Element => {
         </HeadTLogo>
       </HeadT>
       <HeadM>
-        <Discount>
+        <Discount onClick={() => router.push('/wonderfuloffers')}>
           <p>تخفیفات شگفت انگیز</p>
           <Discounts />
         </Discount>
@@ -250,6 +250,7 @@ const Discount = styled.div`
   align-items: center;
   flex-direction: row;
   padding-right: 10px;
+  cursor: pointer;
   p {
     margin-right: 5px;
     font-size: 14px;
