@@ -97,11 +97,11 @@ export const Header = (): JSX.Element => {
           </AllScore>
         </Status>
         <Details>
-          <div className="left">
-            <p>مزایای باشگاه مشتریان</p>
-          </div>
           <div className="right">
             <p>تخفیفات شهر تفریحی مادر</p>
+          </div>
+          <div className="left" onClick={() => router.push('/ccbenefits')}>
+            <p>مزایای باشگاه مشتریان</p>
           </div>
         </Details>
       </HeadB>
@@ -294,6 +294,7 @@ const Details = styled.div`
   }
   .left {
     padding-right: 20px;
+    cursor: pointer;
     p {
       color: #333;
       font-size: 14px;
