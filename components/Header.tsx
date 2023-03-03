@@ -21,7 +21,9 @@ export const Header = (): JSX.Element => {
           <div>
             <Chart />
             <Shop />
-            <Profile />
+            <div onClick={() => router.push('/profile')}>
+              <Profile />
+            </div>
           </div>
         </HeadTIcons>
         <HeadTSearch>

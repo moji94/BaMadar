@@ -340,3 +340,83 @@ export const Auth = (props: SVGProps<SVGSVGElement>): any => (
     <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm7 10c0 4.52-2.98 8.69-7 9.93-4.02-1.24-7-5.41-7-9.93V6.3l7-3.11 7 3.11V11zm-11.59.59L6 13l4 4 8-8-1.41-1.42L10 14.17z"></path>
   </svg>
 )
+export const Order = (props: SVGProps<SVGSVGElement>): any => (
+  <svg
+    width={50}
+    height={50}
+    focusable="false"
+    viewBox="0 0 24 24"
+    aria-hidden="true"
+    fill="rgb(23,155,191)"
+  >
+    <path d="M17.21 9l-4.38-6.56c-.19-.28-.51-.42-.83-.42-.32 0-.64.14-.83.43L6.79 9H2c-.55 0-1 .45-1 1 0 .09.01.18.04.27l2.54 9.27c.23.84 1 1.46 1.92 1.46h13c.92 0 1.69-.62 1.93-1.46l2.54-9.27L23 10c0-.55-.45-1-1-1h-4.79zM9 9l3-4.4L15 9H9zm3 8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"></path>
+  </svg>
+)
+export const Question = (props: SVGProps<SVGSVGElement>): any => (
+  <svg
+    width={50}
+    height={50}
+    focusable="false"
+    viewBox="0 0 24 24"
+    aria-hidden="true"
+    fill="rgb(23,155,191)"
+  >
+    <path d="M11.5 2C6.81 2 3 5.81 3 10.5S6.81 19 11.5 19h.5v3c4.86-2.34 8-7 8-11.5C20 5.81 16.19 2 11.5 2zm1 14.5h-2v-2h2v2zm0-3.5h-2c0-3.25 3-3 3-5 0-1.1-.9-2-2-2s-2 .9-2 2h-2c0-2.21 1.79-4 4-4s4 1.79 4 4c0 2.5-3 2.75-3 5z"></path>
+  </svg>
+)
+export const Phone = (props: SVGProps<SVGSVGElement>): any => (
+  <svg
+    width={50}
+    height={50}
+    focusable="false"
+    viewBox="0 0 24 24"
+    aria-hidden="true"
+    fill="rgb(23,155,191)"
+  >
+    <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"></path>
+  </svg>
+)
+export const Complate = (props: SVGProps<SVGSVGElement>): any => (
+  <svg
+    width={24}
+    height={24}
+    focusable="false"
+    viewBox="0 0 24 24"
+    aria-hidden="true"
+  >
+    <path d="M10.09 15.59L11.5 17l5-5-5-5-1.41 1.41L12.67 11H3v2h9.67l-2.58 2.59zM19 3H5c-1.11 0-2 .9-2 2v4h2V5h14v14H5v-4H3v4c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"></path>
+  </svg>
+)
+export const Application = (props: SVGProps<SVGSVGElement>): any => (
+  <svg
+    width={24}
+    height={24}
+    focusable="false"
+    viewBox="0 0 24 24"
+    aria-hidden="true"
+  >
+    <path d="M16 1H8C6.34 1 5 2.34 5 4v16c0 1.66 1.34 3 3 3h8c1.66 0 3-1.34 3-3V4c0-1.66-1.34-3-3-3zm-2 20h-4v-1h4v1zm3.25-3H6.75V4h10.5v14z"></path>
+  </svg>
+)
+export const Roles = (props: SVGProps<SVGSVGElement>): any => (
+  <svg
+    width={24}
+    height={24}
+    focusable="false"
+    viewBox="0 0 24 24"
+    aria-hidden="true"
+  >
+    <path d="M4 4h16v12H5.17L4 17.17V4m0-2c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2H4zm2 10h8v2H6v-2zm0-3h12v2H6V9zm0-3h12v2H6V6z"></path>
+  </svg>
+)
+export const Quit = (props: SVGProps<SVGSVGElement>): any => (
+  <svg
+    width={24}
+    height={24}
+    focusable="false"
+    viewBox="0 0 24 24"
+    aria-hidden="true"
+  >
+    <path d="M10.09 15.59L11.5 17l5-5-5-5-1.41 1.41L12.67 11H3v2h9.67l-2.58 2.59zM19 3H5c-1.11 0-2 .9-2 2v4h2V5h14v14H5v-4H3v4c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"></path>
+  </svg>
+)
