@@ -154,7 +154,7 @@ const GetNum = styled.div<{ color: string }>`
     box-shadow: 0px 0px 5px #ccc;
     border-radius: 5px;
     position: relative;
-    margin-bottom: 100px;
+    margin-bottom: 20px;
   }
   .img {
     transform: rotate(-45deg);
