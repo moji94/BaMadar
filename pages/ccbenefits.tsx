@@ -1,4 +1,4 @@
-import { Layout, Header } from '@/components/Index'
+import { Layout, Header, Navbar } from '@/components/Index'
 import styled from 'styled-components'
 
 export default function Categories() {
@@ -50,6 +50,7 @@ export default function Categories() {
           </p>
         </Box>
       </Container>
+      <Navbar></Navbar>
     </Layout>
   )
 }
@@ -60,7 +61,6 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 180px;
 `
 const Box = styled.div`
   width: 500px;
@@ -72,10 +72,6 @@ const Box = styled.div`
   align-items: flex-end;
   border-radius: 10px;
   box-shadow: 3px 2px 3px #ccc;
-  /* padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 10px;
-  padding-bottom: 10px; */
   padding: 20px 20px 10px 20px;
   margin-top: 30px;
   h3 {

@@ -7,6 +7,7 @@ import {
   MostSells,
   MostPopular,
   Footer,
+  Navbar,
 } from '@/components/Index'
 
 export default function Home() {
@@ -19,6 +20,7 @@ export default function Home() {
       <MostSells></MostSells>
       <MostPopular></MostPopular>
       <Footer></Footer>
+      <Navbar></Navbar>
     </Layout>
   )
 }

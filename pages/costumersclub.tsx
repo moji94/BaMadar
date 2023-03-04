@@ -1,5 +1,5 @@
 import { Auth, Telegram } from '@/components/Icons'
-import { Layout, Header } from '@/components/Index'
+import { Layout, Header, Navbar } from '@/components/Index'
 import { useState } from 'react'
 import styled, { css } from 'styled-components'
 
@@ -66,6 +66,7 @@ export default function Costumersclub() {
           )}
         </GetNum>
       </Container>
+      <Navbar></Navbar>
     </Layout>
   )
 }

@@ -38,6 +38,14 @@ const Container = styled.div`
   align-items: center;
   background-color: rgb(245, 245, 245);
   position: absolute;
+  padding-top: 170px;
+  @media (max-width: 1100px) {
+    padding-top: 210px;
+  }
+  @media (max-width: 800px) {
+    padding-top: 10px;
+    padding-bottom: 80px;
+  }
 `
 const MainContent = styled.div`
   width: 100%;

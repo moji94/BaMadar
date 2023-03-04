@@ -1,4 +1,4 @@
-import { Layout, Header, PProductCard } from '@/components/Index'
+import { Layout, Header, PProductCard, Navbar } from '@/components/Index'
 import styled, { css } from 'styled-components'
 import { useAtom } from 'jotai'
 import { productActivation } from 'stores/store'
@@ -235,6 +235,7 @@ export default function WonderfulOffers() {
           </Details>
         </Single>
       </Container>
+      <Navbar></Navbar>
     </Layout>
   )
 }
