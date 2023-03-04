@@ -113,6 +113,7 @@ const Left = styled.div`
   @media (max-width: 800px) {
     width: 100%;
     margin-top: 15px;
+    padding-bottom: 20px;
   }
   div {
     margin-right: 20px;

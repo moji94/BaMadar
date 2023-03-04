@@ -40,18 +40,13 @@ const Container = styled.div`
 const Wrapper = styled.div`
   width: 85%;
   height: auto;
-  padding-top: 170px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   padding-left: 20px;
   padding-right: 20px;
-  @media (max-width: 1100px) {
-    padding-top: 220px;
-  }
   @media (max-width: 800px) {
-    padding-top: 10px;
     flex-direction: column-reverse;
   }
 `

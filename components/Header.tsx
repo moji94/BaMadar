@@ -19,8 +19,12 @@ export const Header = (): JSX.Element => {
       <HeadT>
         <HeadTIcons>
           <div>
-            <Chart />
-            <Shop />
+            <div>
+              <Chart />
+            </div>
+            <div>
+              <Shop />
+            </div>
             <div onClick={() => router.push('/profile')}>
               <Profile />
             </div>

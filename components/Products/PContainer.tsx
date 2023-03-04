@@ -242,7 +242,6 @@ const InnerContainer = styled.div<{ ac: any }>`
   justify-content: center;
   align-items: flex-start;
   flex-direction: row;
-  padding-top: 170px;
   flex-wrap: wrap;
   position: relative;
   transition: all 2000ms;
