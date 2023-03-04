@@ -19,13 +19,13 @@ export const Header = (): JSX.Element => {
       <HeadT>
         <HeadTIcons>
           <div>
-            <div>
+            <div className="icon">
               <Chart />
             </div>
-            <div>
+            <div className="icon" onClick={() => router.push('/cart')}>
               <Shop />
             </div>
-            <div onClick={() => router.push('/profile')}>
+            <div className="icon" onClick={() => router.push('/profile')}>
               <Profile />
             </div>
           </div>
@@ -142,7 +142,7 @@ const HeadT = styled.div`
   padding-right: 50px;
 `
 const HeadTIcons = styled.div`
-  width: 300px;
+  width: 400px;
   height: 65px;
   display: flex;
   justify-content: flex-start;

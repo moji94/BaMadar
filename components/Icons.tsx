@@ -437,3 +437,15 @@ export const Quit = (props: SVGProps<SVGSVGElement>): any => (
     <path d="M10.09 15.59L11.5 17l5-5-5-5-1.41 1.41L12.67 11H3v2h9.67l-2.58 2.59zM19 3H5c-1.11 0-2 .9-2 2v4h2V5h14v14H5v-4H3v4c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"></path>
   </svg>
 )
+export const What = (props: SVGProps<SVGSVGElement>): any => (
+  <svg
+    width={24}
+    height={24}
+    focusable="false"
+    viewBox="0 0 24 24"
+    aria-hidden="true"
+    fill="rgb(56,169,201)"
+  >
+    <path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20, 12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10, 10 0 0,0 12,2M11,17H13V11H11V17Z"></path>
+  </svg>
+)
