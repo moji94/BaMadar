@@ -181,17 +181,15 @@ export const PlusIcon = (props: SVGProps<SVGSVGElement>): any => (
   </svg>
 )
 export const BluePlus = (props: SVGProps<SVGSVGElement>): any => (
-  <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none">
+  <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" {...props}>
     <path
       d="M5 12H19"
-      stroke="rgb(23, 155, 191)"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
     <path
       d="M12 5L12 19"
-      stroke="rgb(23, 155, 191)"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -205,7 +203,7 @@ export const BlueMinus = (props: SVGProps<SVGSVGElement>): any => (
     focusable="false"
     viewBox="0 0 24 24"
     aria-hidden="true"
-    fill="rgb(23, 155, 191)"
+    {...props}
   >
     <path d="M19 13H5v-2h14v2z"></path>
   </svg>

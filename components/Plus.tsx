@@ -12,7 +12,7 @@ export const Plus = (title: Props): JSX.Element => {
   const [add, setAdd] = useState<string>('')
   const [cart, setCart] = useAtom(myStore)
   let [count, setCount] = useState<number>(0)
-  const product = title
+  // const product = title
   //   const addToCart = (product) => {
   //     const myCart = cart
   //     const existingProduct = myCart.map((singleProduct) => {
@@ -71,7 +71,7 @@ export const Plus = (title: Props): JSX.Element => {
                   minusOrder()
                 }}
               >
-                <BlueMinus />
+                <BlueMinus fill="rgb(23, 155, 191)" />
               </div>
             )}
             <p>{count}</p>
@@ -81,7 +81,7 @@ export const Plus = (title: Props): JSX.Element => {
                 addOrder()
               }}
             >
-              <BluePlus />
+              <BluePlus stroke="rgb(23, 155, 191)" />
             </div>
           </div>
         ) : (

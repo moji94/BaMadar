@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { Layout, Header, Navbar } from '@/components/Index'
+import { Layout, Header, Navbar, CartPlus } from '@/components/Index'
 import { What } from '@/components/Icons'
 import { useState } from 'react'
 
@@ -13,6 +13,66 @@ export default function Cart() {
       subjects: [
         'نوشابه , نوشیدنی انرژی زا , ماء الشعیر و دلستر , آبمیوه , شربت ها , عرقیجات ,آب معدنی',
       ],
+      price: 12000,
+      orgPrice: 32000,
+      alt: 'awdkpawkpdk',
+      dis: 10,
+    },
+    {
+      img: '/images/drink.png',
+      title: 'نوشیدنی',
+      subjects: [
+        'نوشابه , نوشیدنی انرژی زا , ماء الشعیر و دلستر , آبمیوه , شربت ها , عرقیجات ,آب معدنی',
+      ],
+      price: 12000,
+      orgPrice: 32000,
+      alt: 'awdkpawkpdk',
+      dis: 10,
+    },
+    {
+      img: '/images/drink.png',
+      title: 'نوشیدنی',
+      subjects: [
+        'نوشابه , نوشیدنی انرژی زا , ماء الشعیر و دلستر , آبمیوه , شربت ها , عرقیجات ,آب معدنی',
+      ],
+      price: 12000,
+      orgPrice: 32000,
+      alt: 'awdkpawkpdk',
+      dis: 10,
+    },
+    {
+      img: '/images/drink.png',
+      title: 'نوشیدنی',
+      subjects: [
+        'نوشابه , نوشیدنی انرژی زا , ماء الشعیر و دلستر , آبمیوه , شربت ها , عرقیجات ,آب معدنی',
+      ],
+      price: 12000,
+      orgPrice: 32000,
+      alt: 'awdkpawkpdk',
+      dis: 10,
+    },
+    {
+      img: '/images/drink.png',
+      title: 'نوشیدنی',
+      subjects: [
+        'نوشابه , نوشیدنی انرژی زا , ماء الشعیر و دلستر , آبمیوه , شربت ها , عرقیجات ,آب معدنی',
+      ],
+      price: 12000,
+      orgPrice: 32000,
+      alt: 'awdkpawkpdk',
+      dis: 10,
+    },
+
+    {
+      img: '/images/protein.png',
+      title: 'مواد پروتئینی',
+      subjects: [
+        'نوشابه , نوشیدنی انرژی زا , ماء الشعیر و دلستر , آبمیوه , شربت ها , عرقیجات ,آب معدنی',
+      ],
+      price: 77000,
+      orgPrice: 80000,
+      alt: 'awdkpawkpdk',
+      dis: 10,
     },
     {
       img: '/images/protein.png',
@@ -20,6 +80,44 @@ export default function Cart() {
       subjects: [
         'نوشابه , نوشیدنی انرژی زا , ماء الشعیر و دلستر , آبمیوه , شربت ها , عرقیجات ,آب معدنی',
       ],
+      price: 77000,
+      orgPrice: 80000,
+      alt: 'awdkpawkpdk',
+      dis: 10,
+    },
+    {
+      img: '/images/protein.png',
+      title: 'مواد پروتئینی',
+      subjects: [
+        'نوشابه , نوشیدنی انرژی زا , ماء الشعیر و دلستر , آبمیوه , شربت ها , عرقیجات ,آب معدنی',
+      ],
+      price: 77000,
+      orgPrice: 80000,
+      alt: 'awdkpawkpdk',
+      dis: 10,
+    },
+    {
+      img: '/images/protein.png',
+      title: 'مواد پروتئینی',
+      subjects: [
+        'نوشابه , نوشیدنی انرژی زا , ماء الشعیر و دلستر , آبمیوه , شربت ها , عرقیجات ,آب معدنی',
+      ],
+      price: 77000,
+      orgPrice: 80000,
+      alt: 'awdkpawkpdk',
+      dis: 10,
+    },
+
+    {
+      img: '/images/digital.png',
+      title: 'لوازم جانبی موبایل و کامپیوتر',
+      subjects: [
+        'کیف و کاور گوشی, انواع پاوربانک ,مونوپاد،سه پایه و پایه نگهدارنده گوشی,هارد و فلش و رم, هدفون و هدست, اسپیکر و میکروفن, مچ بند و ساعت هوشمند, انواع کابل و محافظ کابل و بلوتوث, انواع تبدیل و رم ریدر و خشاب سیم,ماوس و کیبورد,گیم پد و دسته بازی',
+      ],
+      price: 56000,
+      orgPrice: 87000,
+      alt: 'awdkpawkpdk',
+      dis: 10,
     },
     {
       img: '/images/digital.png',
@@ -27,27 +125,10 @@ export default function Cart() {
       subjects: [
         'کیف و کاور گوشی, انواع پاوربانک ,مونوپاد،سه پایه و پایه نگهدارنده گوشی,هارد و فلش و رم, هدفون و هدست, اسپیکر و میکروفن, مچ بند و ساعت هوشمند, انواع کابل و محافظ کابل و بلوتوث, انواع تبدیل و رم ریدر و خشاب سیم,ماوس و کیبورد,گیم پد و دسته بازی',
       ],
-    },
-    {
-      img: '/images/digital.png',
-      title: 'لوازم جانبی موبایل و کامپیوتر',
-      subjects: [
-        'کیف و کاور گوشی, انواع پاوربانک ,مونوپاد،سه پایه و پایه نگهدارنده گوشی,هارد و فلش و رم, هدفون و هدست, اسپیکر و میکروفن, مچ بند و ساعت هوشمند, انواع کابل و محافظ کابل و بلوتوث, انواع تبدیل و رم ریدر و خشاب سیم,ماوس و کیبورد,گیم پد و دسته بازی',
-      ],
-    },
-    {
-      img: '/images/digital.png',
-      title: 'لوازم جانبی موبایل و کامپیوتر',
-      subjects: [
-        'کیف و کاور گوشی, انواع پاوربانک ,مونوپاد،سه پایه و پایه نگهدارنده گوشی,هارد و فلش و رم, هدفون و هدست, اسپیکر و میکروفن, مچ بند و ساعت هوشمند, انواع کابل و محافظ کابل و بلوتوث, انواع تبدیل و رم ریدر و خشاب سیم,ماوس و کیبورد,گیم پد و دسته بازی',
-      ],
-    },
-    {
-      img: '/images/digital.png',
-      title: 'لوازم جانبی موبایل و کامپیوتر',
-      subjects: [
-        'کیف و کاور گوشی, انواع پاوربانک ,مونوپاد،سه پایه و پایه نگهدارنده گوشی,هارد و فلش و رم, هدفون و هدست, اسپیکر و میکروفن, مچ بند و ساعت هوشمند, انواع کابل و محافظ کابل و بلوتوث, انواع تبدیل و رم ریدر و خشاب سیم,ماوس و کیبورد,گیم پد و دسته بازی',
-      ],
+      price: 69000,
+      orgPrice: 70000,
+      alt: 'awdkpawkpdk',
+      dis: 10,
     },
   ]
   return (
@@ -74,10 +155,13 @@ export default function Cart() {
               {array.map((data, index) => (
                 <div className="some">
                   <div className="top">
-                    <p>{data.title}</p>
+                    <p className="number">{data.title}</p>
                     <img src={data.img} className="pimg" />
                   </div>
-                  <div className="bot"></div>
+                  <div className="bot">
+                    <p className="number">ریال{data.price}</p>
+                    <CartPlus></CartPlus>
+                  </div>
                 </div>
               ))}
             </Amount>
@@ -144,16 +228,19 @@ const Amount = styled.div`
   height: auto;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   .some {
-    width: 490px;
+    width: 400px;
     height: 147px;
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 5px;
     margin-top: 10px;
+    padding-right: 20px;
+    margin-right: 5px;
+    margin-left: 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -165,7 +252,6 @@ const Amount = styled.div`
       flex-direction: row;
       align-items: center;
       justify-content: flex-end;
-      background-color: aqua;
       .pimg {
         width: 75px;
         height: 75px;
@@ -178,7 +264,13 @@ const Amount = styled.div`
     .bot {
       width: 100%;
       height: 50%;
-      background-color: orange;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      .number {
+        margin-right: 20px;
+        color: #333;
+      }
     }
   }
 `

@@ -79,20 +79,11 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 170px;
-
-  @media (max-width: 1100px) {
-    padding-top: 210px;
-  }
-  @media (max-width: 800px) {
-    padding-top: 20px;
-  }
 `
 const Process = styled.div<{ color: string }>`
   width: 60%;
   min-width: 450px;
   height: 100px;
-  /* background-color: yellow; */
   display: flex;
   flex-direction: row;
   justify-content: center;
