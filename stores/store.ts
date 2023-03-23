@@ -12,3 +12,5 @@ interface storeType {
   count: number
 }
 export const myStore = atomWithStorage<storeType[]>('@Order', [])
+
+export const adminPos = atomWithStorage<string>('@Order', 'none')

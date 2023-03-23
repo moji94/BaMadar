@@ -9,7 +9,9 @@ export default function Login() {
         <Holder>
           <input className="email" placeholder="ایمیل" />
           <input className="pass" placeholder="پسورد" />
-          <button className="enter">ورود</button>
+          <button className="enter" onClick={() => router.push('/admin/main')}>
+            ورود
+          </button>
           <p className="back" onClick={() => router.push('/')}>
             بازگشت
           </p>
