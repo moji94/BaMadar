@@ -47,6 +47,10 @@ export const Header = (): JSX.Element => {
         </HeadTLogo>
       </HeadT>
       <HeadM>
+        <Admin onClick={() => router.push('/admin/login')}>
+          <p>ورود مدیران</p>
+          <Profile />
+        </Admin>
         <Discount onClick={() => router.push('/wonderfuloffers')}>
           <p>تخفیفات شگفت انگیز</p>
           <Discounts />
@@ -249,6 +253,21 @@ const Club = styled.div`
   }
 `
 const Discount = styled.div`
+  width: 200px;
+  height: 40px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: row;
+  padding-right: 10px;
+  cursor: pointer;
+  p {
+    margin-right: 5px;
+    font-size: 14px;
+    color: #333;
+  }
+`
+const Admin = styled.div`
   width: 200px;
   height: 40px;
   display: flex;
