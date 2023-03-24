@@ -1,4 +1,4 @@
-import { Layout, SideBar } from '@/components/Index'
+import { Layout, SideBar, CreateAdmin } from '@/components/Index'
 import styled from 'styled-components'
 import { adminPos } from '@/stores/store'
 import { useAtom } from 'jotai'
@@ -8,7 +8,9 @@ export default function Main() {
     // <Layout title="Ba Madar">
     <Container>
       <SideBar></SideBar>
-      <Holder></Holder>
+      <Holder>
+        <CreateAdmin></CreateAdmin>
+      </Holder>
     </Container>
     // {/* </Layout> */}
   )
