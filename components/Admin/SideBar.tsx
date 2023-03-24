@@ -13,8 +13,12 @@ export const SideBar = (): JSX.Element => {
       >
         <p>ایجاد مدیر</p>
       </Ps>
-      <Ps>
-        <p>ایجاد مدیر</p>
+      <Ps
+        onClick={() => {
+          setAc('Ccat')
+        }}
+      >
+        <p>ایجاد دسته</p>
       </Ps>
       <Ps>
         <p>ایجاد مدیر</p>

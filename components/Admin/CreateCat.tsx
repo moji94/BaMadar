@@ -2,17 +2,21 @@ import styled, { css } from 'styled-components'
 import { adminPos } from '@/stores/store'
 import { useAtom } from 'jotai'
 
-export const CreateAdmin = (): JSX.Element => {
+export const CreateCat = (): JSX.Element => {
   const [ac, setAc] = useAtom(adminPos)
   return (
     <Container ac={ac}>
-      {ac === 'Cadmin' ? (
+      {ac === 'Ccat' ? (
         <Card>
-          <p>ایجاد مدیر</p>
-          <input className="obj" placeholder="نام و نام خانوادگی" />
-          <input className="obj" placeholder="پسورد" />
-          <input className="obj" placeholder="ایمیل" />
-          <input className="obj" placeholder="شماره موبایل" />
+          <p>ایجاد دسته</p>
+          <input className="obj" placeholder="نام دسته" />
+          <Select>
+            <option value="" hidden>
+              انتخاب دسته بندی
+            </option>
+            <option value="1">ارایشی و بهداشتی</option>
+            <option value="2">موادغذایی</option>
+          </Select>
           <button
             className="create"
             onClick={() => {
@@ -36,7 +40,7 @@ const Container = styled.div<{ ac: string }>`
   align-items: center;
   justify-content: center;
   ${({ ac }) =>
-    ac === 'Cadmin'
+    ac === 'Ccat'
       ? css`
           display: flex;
         `
@@ -73,5 +77,26 @@ const Card = styled.div`
     font-size: 15px;
     font-family: 'Vazir';
     cursor: pointer;
+  }
+`
+const Select = styled.select`
+  width: 75%;
+  height: 35px;
+  background: white;
+  color: gray;
+  padding-left: 5px;
+  font-size: 14px;
+  border: none;
+  margin-left: 10px;
+  direction: rtl;
+  font-family: 'Vazir';
+
+  option {
+    color: black;
+    background: white;
+    display: flex;
+    white-space: pre;
+    min-height: 20px;
+    padding: 0px 2px 1px;
   }
 `
