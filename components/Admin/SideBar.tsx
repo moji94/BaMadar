@@ -27,6 +27,13 @@ export const SideBar = (): JSX.Element => {
       >
         <p>ایجاد محصول</p>
       </Ps>
+      <Ps
+        onClick={() => {
+          setAc('Gorders')
+        }}
+      >
+        <p>لیست سفارشات</p>
+      </Ps>
     </Container>
   )
 }

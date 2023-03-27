@@ -4,6 +4,8 @@ import {
   CreateAdmin,
   CreateCat,
   CreateProd,
+  GetOrders,
+  GetSingleOrder,
 } from '@/components/Index'
 import styled from 'styled-components'
 import { adminPos } from '@/stores/store'
@@ -18,6 +20,8 @@ export default function Main() {
         <CreateAdmin></CreateAdmin>
         <CreateCat></CreateCat>
         <CreateProd></CreateProd>
+        <GetOrders></GetOrders>
+        <GetSingleOrder></GetSingleOrder>
       </Holder>
     </Container>
     // {/* </Layout> */}
