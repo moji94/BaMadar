@@ -1,4 +1,10 @@
-import { Layout, SideBar, CreateAdmin, CreateCat } from '@/components/Index'
+import {
+  Layout,
+  SideBar,
+  CreateAdmin,
+  CreateCat,
+  CreateProd,
+} from '@/components/Index'
 import styled from 'styled-components'
 import { adminPos } from '@/stores/store'
 import { useAtom } from 'jotai'
@@ -11,6 +17,7 @@ export default function Main() {
       <Holder>
         <CreateAdmin></CreateAdmin>
         <CreateCat></CreateCat>
+        <CreateProd></CreateProd>
       </Holder>
     </Container>
     // {/* </Layout> */}

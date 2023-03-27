@@ -20,8 +20,12 @@ export const SideBar = (): JSX.Element => {
       >
         <p>ایجاد دسته</p>
       </Ps>
-      <Ps>
-        <p>ایجاد مدیر</p>
+      <Ps
+        onClick={() => {
+          setAc('Cprod')
+        }}
+      >
+        <p>ایجاد محصول</p>
       </Ps>
     </Container>
   )
@@ -49,5 +53,6 @@ const Ps = styled.div`
   justify-content: space-evenly;
   p {
     color: #333;
+    text-align: center;
   }
 `
