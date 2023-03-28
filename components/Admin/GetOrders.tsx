@@ -81,6 +81,7 @@ const Card = styled.div`
   align-items: center;
   justify-content: flex-start;
   background-color: brown;
+  overflow-y: scroll;
   .all {
     width: 80%;
     height: 30px;
