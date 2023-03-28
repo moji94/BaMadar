@@ -6,6 +6,18 @@ export const GetOrders = (): JSX.Element => {
   const [ac, setAc] = useAtom(adminPos)
   return (
     <Container ac={ac}>
+      <div
+        className="table"
+        onClick={() => {
+          setAc('GSorder')
+        }}
+      >
+        <p>تاریخ</p>
+        <p>وضعیت</p>
+        <p>نام مشتری</p>
+        <p>قیمت</p>
+        <p>نام</p>
+      </div>
       {ac === 'Gorders' ? (
         <Card>
           <div
@@ -33,6 +45,7 @@ const Container = styled.div<{ ac: string }>`
   height: 500px;
   background-color: yellow;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   ${({ ac }) =>
@@ -43,6 +56,21 @@ const Container = styled.div<{ ac: string }>`
       : css`
           display: none;
         `}
+  .table {
+    width: 60%;
+    height: 30px;
+    border-radius: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+    p {
+      color: #333;
+    }
+  }
 `
 
 const Card = styled.div`
