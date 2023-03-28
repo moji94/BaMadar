@@ -34,6 +34,13 @@ export const SideBar = (): JSX.Element => {
       >
         <p>لیست سفارشات</p>
       </Ps>
+      <Ps
+        onClick={() => {
+          setAc('Gusers')
+        }}
+      >
+        <p>لیست کاربران</p>
+      </Ps>
     </Container>
   )
 }

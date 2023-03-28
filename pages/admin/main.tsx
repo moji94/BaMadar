@@ -6,6 +6,7 @@ import {
   CreateProd,
   GetOrders,
   GetSingleOrder,
+  GetUsers,
 } from '@/components/Index'
 import styled from 'styled-components'
 import { adminPos } from '@/stores/store'
@@ -22,6 +23,7 @@ export default function Main() {
         <CreateProd></CreateProd>
         <GetOrders></GetOrders>
         <GetSingleOrder></GetSingleOrder>
+        <GetUsers></GetUsers>
       </Holder>
     </Container>
     // {/* </Layout> */}
