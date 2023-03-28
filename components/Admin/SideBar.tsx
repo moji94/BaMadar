@@ -1,5 +1,6 @@
 import { adminPos } from '@/stores/store'
 import { useAtom } from 'jotai'
+import router from 'next/router'
 import styled from 'styled-components'
 
 export const SideBar = (): JSX.Element => {
@@ -41,6 +42,9 @@ export const SideBar = (): JSX.Element => {
       >
         <p>لیست کاربران</p>
       </Ps>
+      <button className="back" onClick={() => router.push('/')}>
+        رفتن به صفحه اصلی
+      </button>
     </Container>
   )
 }
@@ -55,6 +59,16 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
+  .back {
+    width: 75px;
+    height: 50px;
+    border-radius: 5px;
+    background-color: #003058;
+    border: none;
+    font-size: 15px;
+    font-family: 'Vazir';
+    cursor: pointer;
+  }
 `
 const Ps = styled.div`
   width: 75px;
