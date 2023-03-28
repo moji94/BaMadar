@@ -79,12 +79,13 @@ const Card = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   background-color: brown;
   .all {
-    width: 75%;
+    width: 80%;
     height: 30px;
     background-color: #ddd;
+    margin-top: 10px;
     border-radius: 5px;
     padding-left: 5px;
     padding-right: 5px;
