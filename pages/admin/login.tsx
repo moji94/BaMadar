@@ -1,15 +1,76 @@
 import { Layout } from '@/components/Index'
+import axios, { AxiosError } from 'axios'
 import router from 'next/router'
+import { useCallback, useState } from 'react'
 import styled from 'styled-components'
-
+import { config } from '../../utils/main'
 export default function Login() {
+  const [formData, setFormData] = useState<{
+    email: string
+    pass: string
+  }>({
+    email: '',
+    pass: '',
+  })
+  console.log(formData)
+  const log: any = useCallback(async () => {
+    try {
+      const res = await axios.post(`${config}/login`, {
+        email: formData.email,
+        password: formData.pass,
+      })
+      if (res) {
+        if (res.status === 200) {
+          console.log(res.data)
+          router.push('/admin/main')
+        } else if (res.status === 400) {
+          console.log(formData)
+        } else {
+          console.log('error')
+        }
+      } else {
+        console.warn('we got error here')
+      }
+    } catch (e) {
+      const err = e as AxiosError
+      console.log(err)
+    }
+  }, [formData])
+
   return (
     <Layout title="Ba Madar">
       <Container>
         <Holder>
-          <input className="email" placeholder="ایمیل" />
-          <input className="pass" placeholder="پسورد" />
-          <button className="enter" onClick={() => router.push('/admin/main')}>
+          <input
+            className="email"
+            placeholder="ایمیل"
+            type="email"
+            value={formData.email}
+            onChange={(event) => {
+              setFormData({
+                ...formData,
+                email: event.target.value,
+              })
+            }}
+          />
+          <input
+            className="pass"
+            placeholder="پسورد"
+            type="password"
+            value={formData.pass}
+            onChange={(event) => {
+              setFormData({
+                ...formData,
+                pass: event.target.value,
+              })
+            }}
+          />
+          <button
+            className="enter"
+            onClick={() => {
+              log()
+            }}
+          >
             ورود
           </button>
           <p className="back" onClick={() => router.push('/')}>
