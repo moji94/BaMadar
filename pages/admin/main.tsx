@@ -9,17 +9,15 @@ import {
   GetUsers,
 } from '@/components/Index'
 import styled from 'styled-components'
-import { adminPos } from '@/stores/store'
-import { useAtom } from 'jotai'
 
-export default function Main() {
+export default function Main(token: any) {
   return (
     // <Layout title="Ba Madar">
     <Container>
       <SideBar></SideBar>
       <Holder>
         <CreateAdmin></CreateAdmin>
-        <CreateCat></CreateCat>
+        <CreateCat token={token}></CreateCat>
         <CreateProd></CreateProd>
         <GetOrders></GetOrders>
         <GetSingleOrder></GetSingleOrder>
