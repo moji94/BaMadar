@@ -4,7 +4,6 @@ import { useAtom } from 'jotai'
 
 export const CreateProd = (): JSX.Element => {
   const [ac, setAc] = useAtom(adminPos)
-  console.log(ac)
   return (
     <Container ac={ac}>
       {ac === 'Cprod' ? (
