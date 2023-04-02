@@ -1,26 +1,84 @@
 import styled, { css } from 'styled-components'
 import { adminPos } from '@/stores/store'
 import { useAtom } from 'jotai'
+import { useCallback, useEffect, useState } from 'react'
+import axios, { AxiosError } from 'axios'
+import { config } from '@/utils/main'
 
-export const CreateCat = (): JSX.Element => {
+export const CreateCat = ({ token }: any): JSX.Element => {
+  const [cats, setCats] = useState<[]>([])
+  const [name, setName] = useState<string>('')
+  const [select, setSelect] = useState<string>('select')
   const [ac, setAc] = useAtom(adminPos)
+  console.log(name)
+  const getCats = useCallback(async () => {
+    try {
+      const res = await axios.post(`${config}/GetCat`)
+      if (res) {
+        if (res.status === 200) {
+          setCats(res.data)
+        } else if (res.status === 400) {
+          console.log(res.status)
+        }
+      } else {
+        console.log('error')
+      }
+    } catch (e) {
+      const err = e as AxiosError
+      console.log(err)
+    }
+  }, [cats])
+  const createSubCat = useCallback(async () => {
+    const res = await axios.post(`${config}/CreateCat`, {
+      type: select,
+      name: name,
+    })
+    if (res) {
+      if (res.status == 200) {
+        alert('زیر دسته جدید ایجاد شد')
+      } else if (res.status == 400) {
+        alert('مشکل در ورودی')
+      }
+    } else {
+      alert('problem')
+    }
+  }, [select])
+
+  useEffect(() => {
+    getCats()
+  }, [token])
   return (
     <Container ac={ac}>
       {ac === 'Ccat' ? (
         <Card>
           <p>ایجاد دسته</p>
-          <input className="obj" placeholder="نام دسته" />
-          <Select>
+          <Select
+            onChange={(event) => {
+              setSelect(event.target.value)
+              console.log(select)
+            }}
+          >
             <option value="" hidden>
               انتخاب دسته بندی
             </option>
-            <option value="1">ارایشی و بهداشتی</option>
-            <option value="2">موادغذایی</option>
+            {cats.map((data: any, index: any) => (
+              <option value={data.id} key={index}>
+                {data.name}
+              </option>
+            ))}
           </Select>
+          <input
+            className="obj"
+            placeholder="نام دسته"
+            value={name}
+            onChange={(event) => {
+              setName(event.target.value)
+            }}
+          />
           <button
             className="create"
             onClick={() => {
-              setAc('none')
+              createSubCat()
             }}
           >
             ایجاد
