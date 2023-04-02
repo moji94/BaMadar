@@ -22,7 +22,8 @@ export default function Login() {
       if (res) {
         if (res.status === 200) {
           console.log(res.data)
-          router.push('/admin/main')
+          const token = res.data
+          router.push('/admin/main', token)
         } else if (res.status === 400) {
           console.log(formData)
         } else {
