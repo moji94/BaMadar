@@ -1,22 +1,107 @@
 import styled, { css } from 'styled-components'
 import { adminPos } from '@/stores/store'
 import { useAtom } from 'jotai'
+import { useCallback, useState } from 'react'
+import axios, { Axios, AxiosError } from 'axios'
+import { config } from '@/utils/main'
 
 export const CreateAdmin = (): JSX.Element => {
   const [ac, setAc] = useAtom(adminPos)
+  const [formData, setFormData] = useState<{
+    email: string
+    name: string
+    pass: string
+    phone: string
+  }>({
+    email: '',
+    name: '',
+    pass: '',
+    phone: '',
+  })
+  const create = useCallback(async () => {
+    try {
+      const res = await axios.post(`${config}/CreateAdmin`, {
+        name: formData.name,
+        password: formData.pass,
+        email: formData.email,
+        phone: formData.phone,
+      })
+      if (res) {
+        if (res.status == 200) {
+          alert('ادمین با موفقیت اضافه شد')
+        } else if (res.status == 400) {
+          alert('مشکلی وجود دارد')
+        } else {
+          alert('مشکلی در ورودی هاو جود دارد')
+        }
+      } else {
+        console.warn('we got error here')
+      }
+    } catch (e) {
+      const err = e as AxiosError
+    }
+  }, [formData])
   return (
     <Container ac={ac}>
       {ac === 'Cadmin' ? (
         <Card>
           <p>ایجاد مدیر</p>
-          <input className="obj" placeholder="نام و نام خانوادگی" />
-          <input className="obj" placeholder="پسورد" />
-          <input className="obj" placeholder="ایمیل" />
-          <input className="obj" placeholder="شماره موبایل" />
+          <input
+            className="obj"
+            placeholder="نام و نام خانوادگی"
+            type="text"
+            value={formData.name}
+            onChange={(event) => {
+              setFormData({
+                ...formData,
+                name: event.target.value,
+              })
+            }}
+          />
+          <input
+            className="obj"
+            placeholder="پسورد"
+            type="password"
+            value={formData.pass}
+            onChange={(event) => {
+              setFormData({
+                ...formData,
+                pass: event.target.value,
+              })
+            }}
+          />
+          <input
+            className="obj"
+            placeholder="ایمیل"
+            type="email"
+            value={formData.email}
+            onChange={(event) => {
+              setFormData({
+                ...formData,
+                email: event.target.value,
+              })
+            }}
+          />
+          <input
+            className="obj"
+            placeholder="شماره موبایل"
+            type="text"
+            pattern="[0-9]"
+            maxLength={11}
+            minLength={11}
+            required
+            value={formData.phone}
+            onChange={(event) => {
+              setFormData({
+                ...formData,
+                phone: event.target.value,
+              })
+            }}
+          />
           <button
             className="create"
             onClick={() => {
-              setAc('none')
+              create()
             }}
           >
             ایجاد
