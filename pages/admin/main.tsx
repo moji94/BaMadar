@@ -18,7 +18,7 @@ export default function Main(token: any) {
       <Holder>
         <CreateAdmin></CreateAdmin>
         <CreateCat token={token}></CreateCat>
-        <CreateProd></CreateProd>
+        <CreateProd token={token}></CreateProd>
         <GetOrders></GetOrders>
         <GetSingleOrder></GetSingleOrder>
         <GetUsers></GetUsers>

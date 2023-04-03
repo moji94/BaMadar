@@ -1,56 +1,220 @@
 import styled, { css } from 'styled-components'
 import { adminPos } from '@/stores/store'
 import { useAtom } from 'jotai'
+import { useCallback, useEffect, useState } from 'react'
+import axios, { AxiosError } from 'axios'
+import { config } from '@/utils/main'
 
-export const CreateProd = (): JSX.Element => {
+export const CreateProd = ({ token }: any): JSX.Element => {
   const [ac, setAc] = useAtom(adminPos)
+  const [cats, setCats] = useState<[]>([])
+  const [subCats, setSubCats] = useState<[]>([])
+  const [select, setSelect] = useState<string>('select')
+  const [formData, setFormData] = useState<{
+    name: string
+    comment: string
+    perc: string
+    subcatId: string
+    mainSl: number
+    mostSell: number
+    wonder: number
+  }>({
+    name: '',
+    comment: '',
+    perc: '',
+    subcatId: '',
+    mainSl: 0,
+    mostSell: 0,
+    wonder: 0,
+  })
+  //
+  const getCats = useCallback(async () => {
+    try {
+      const res = await axios.post(`${config}/GetCat`)
+      if (res) {
+        if (res.status === 200) {
+          setCats(res.data)
+        } else if (res.status === 400) {
+          console.log(res.status)
+        }
+      } else {
+        console.log('error')
+      }
+    } catch (e) {
+      const err = e as AxiosError
+      console.log(err)
+    }
+  }, [cats])
+  //
+  const getSubCats = useCallback(async () => {
+    try {
+      const res = await axios.post(`${config}/GetSubCat`, { id: select })
+      if (res) {
+        if (res.status === 200) {
+          setSubCats(res.data)
+        } else if (res.status === 400) {
+          console.log(res.status)
+        }
+      } else {
+        console.log('error')
+      }
+    } catch (e) {
+      const err = e as AxiosError
+      console.log(err)
+    }
+  }, [select])
+  //
+  useEffect(() => {
+    getSubCats()
+  }, [select])
+  useEffect(() => {
+    getCats()
+  }, [token])
+  const create = useCallback(async () => {
+    try {
+      const res = await axios.post(`${config}/CreateProd`, { formData })
+      if (res.status == 200) {
+        alert('200')
+      } else if (res.status == 400) {
+        alert('400')
+      }
+    } catch (e) {
+      const err = e as AxiosError
+      alert(err)
+    }
+  }, [formData])
   return (
     <Container ac={ac}>
       {ac === 'Cprod' ? (
         <Card>
           <p>ایجاد محصول</p>
-          <input className="obj" placeholder="نام محصول" />
-          <input className="obj" placeholder="توضیح" />
-          <input className="obj" placeholder="مقدار تخفیف" />
-          <Select>
+          <input
+            className="obj"
+            placeholder="نام محصول"
+            value={formData.name}
+            onChange={(event) => {
+              setFormData({
+                ...formData,
+                name: event.target.value,
+              })
+              console.log(formData)
+            }}
+          />
+          <input
+            className="obj"
+            placeholder="توضیح"
+            value={formData.comment}
+            onChange={(event) => {
+              setFormData({
+                ...formData,
+                comment: event.target.value,
+              })
+            }}
+          />
+          <input
+            className="obj"
+            placeholder="مقدار تخفیف"
+            value={formData.perc}
+            onChange={(event) => {
+              setFormData({
+                ...formData,
+                perc: event.target.value,
+              })
+            }}
+          />
+          <Select
+            onChange={(event) => {
+              setSelect(event.target.value)
+              getSubCats()
+            }}
+          >
             <option value="" hidden>
               انتخاب دسته بندی
             </option>
-            <option value="1">ارایشی و بهداشتی</option>
-            <option value="2">موادغذایی</option>
+            {cats.map((data: any, index: any) => (
+              <option value={data.id} key={index}>
+                {data.name}
+              </option>
+            ))}
           </Select>
-          <Select>
+          <Select
+            onChange={(event) => {
+              setFormData({ ...formData, subcatId: event.target.value })
+            }}
+          >
             <option value="" hidden>
               انتخاب زیر دسته
             </option>
-            <option value="1">ضدعرق</option>
-            <option value="2">خوش بو کننده</option>
+            {subCats.map((data: any, index: any) => (
+              <option value={data.id} key={index}>
+                {data.name}
+              </option>
+            ))}
           </Select>
           <Box>
             <p>اسلایدر اصلی</p>
             <input
               type="checkbox"
-              // checked={hasPromo}
+              value={formData.mainSl}
+              onChange={() => {
+                if (formData.mainSl == 0) {
+                  setFormData({
+                    ...formData,
+                    mainSl: 1,
+                  })
+                } else {
+                  setFormData({
+                    ...formData,
+                    mainSl: 0,
+                  })
+                }
+              }}
             />
           </Box>
           <Box>
             <p>پرفروش ها</p>
             <input
               type="checkbox"
-              // checked={hasPromo}
+              value={formData.mostSell}
+              onChange={() => {
+                if (formData.mostSell == 0) {
+                  setFormData({
+                    ...formData,
+                    mostSell: 1,
+                  })
+                } else {
+                  setFormData({
+                    ...formData,
+                    mostSell: 0,
+                  })
+                }
+              }}
             />
           </Box>
           <Box>
             <p>تخفیفات شگفت انگیز</p>
             <input
               type="checkbox"
-              // checked={hasPromo}
+              value={formData.wonder}
+              onChange={() => {
+                if (formData.wonder == 0) {
+                  setFormData({
+                    ...formData,
+                    wonder: 1,
+                  })
+                } else {
+                  setFormData({
+                    ...formData,
+                    wonder: 0,
+                  })
+                }
+              }}
             />
           </Box>
           <button
             className="create"
             onClick={() => {
-              setAc('none')
+              create()
             }}
           >
             ایجاد
