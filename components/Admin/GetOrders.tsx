@@ -1,9 +1,33 @@
 import styled, { css } from 'styled-components'
-import { adminPos } from '@/stores/store'
+import { adminPos, order } from '@/stores/store'
 import { useAtom } from 'jotai'
+import axios, { AxiosError } from 'axios'
+import { useCallback, useEffect, useState } from 'react'
+import { config } from '@/utils/main'
 
-export const GetOrders = (): JSX.Element => {
+export const GetOrders = ({ token }: any): JSX.Element => {
   const [ac, setAc] = useAtom(adminPos)
+  const [orders, setOrders] = useState<[]>([])
+  const [ord, setOrd] = useAtom(order)
+  const getOrd = useCallback(async () => {
+    try {
+      const res = await axios.post(`${config}/GetOrders`)
+      if (res.status == 200) {
+        setOrders(res.data)
+        console.log(ord)
+      } else if (res.status == 400) {
+        console.log(res.config.data)
+      } else {
+        console.log('problem 500')
+      }
+    } catch (e) {
+      const err = e as AxiosError
+      console.log(err)
+    }
+  }, [ord])
+  useEffect(() => {
+    getOrd()
+  }, [token])
   return (
     <Container ac={ac}>
       <div
@@ -20,18 +44,22 @@ export const GetOrders = (): JSX.Element => {
       </div>
       {ac === 'Gorders' ? (
         <Card>
-          <div
-            className="all"
-            onClick={() => {
-              setAc('GSorder')
-            }}
-          >
-            <p>6\5\1402</p>
-            <p>درحال انتظار</p>
-            <p>مجتبی</p>
-            <p>60000</p>
-            <p>ضدعرق</p>
-          </div>
+          {orders.map((data: any, index: any) => (
+            <div
+              className="all"
+              key={index}
+              onClick={() => {
+                setAc('GSorder')
+                setOrd(data.id)
+              }}
+            >
+              <p>{data.created}</p>
+              <p>{data.status}</p>
+              <p>{data.uId}</p>
+              <p>{data.price}</p>
+              <p>{data.payLoad}</p>
+            </div>
+          ))}
         </Card>
       ) : (
         <div></div>

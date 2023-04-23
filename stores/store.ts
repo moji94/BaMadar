@@ -13,4 +13,6 @@ interface storeType {
 }
 export const myStore = atomWithStorage<storeType[]>('@Order', [])
 
+export const order = atomWithStorage<string>('@Order', '')
+
 export const adminPos = atomWithStorage<string>('@Order', 'none')

@@ -1,37 +1,65 @@
 import styled, { css } from 'styled-components'
-import { adminPos } from '@/stores/store'
+import { adminPos, order } from '@/stores/store'
 import { useAtom } from 'jotai'
+import { useCallback, useEffect, useState } from 'react'
+import axios, { AxiosError } from 'axios'
+import { config } from '@/utils/main'
 
-export const GetSingleOrder = (): JSX.Element => {
+export const GetSingleOrder = ({ token }: any): JSX.Element => {
   const [ac, setAc] = useAtom(adminPos)
+  const [ord, setOrd] = useAtom(order)
+  const [detail, setDitail] = useState<any>()
+  const getOrd = useCallback(async () => {
+    try {
+      const res = await axios.post(`${config}/GetOrderById`, { id: ord })
+      if (res.status == 200) {
+        setDitail(res.data)
+        console.log(detail)
+      } else if (res.status == 400) {
+        console.log(res.config.data)
+      } else {
+        console.log('error 500')
+      }
+    } catch (e) {
+      const err = e as AxiosError
+      console.log(err)
+    }
+  }, [detail])
+  useEffect(() => {
+    getOrd()
+  }, [token])
   return (
     <Container ac={ac}>
       {ac === 'GSorder' ? (
         <Card>
-          <div className="all name">
-            <p>ضدعرق</p>
-            <p>:نام محصول</p>
-          </div>
-          <div className="all count">
-            <p>2</p>
-            <p>تعداد:</p>
-          </div>
-          <div className="all costumer">
-            <p>مجتبی</p>
-            <p>:نام مشتری</p>
-          </div>
-          <div className="all price">
-            <p>60000</p>
-            <p>:قیمت</p>
-          </div>
-          <div className="all status">
-            <p>درحال انتظار</p>
-            <p>:وضعیت</p>
-          </div>
-          <div className="all time">
-            <p>6\5\1402</p>
-            <p>:تاریخ سفارش</p>
-          </div>
+          {detail.map((data: any, index: any) => (
+            <div className="gg" key={index}>
+              <div className="all name">
+                <p>{data.id}</p>
+                <p>:نام محصول</p>
+              </div>
+              <div className="all count">
+                <p>{data.payLoad}</p>
+                <p>تعداد:</p>
+              </div>
+              <div className="all costumer">
+                <p>{data.uId}</p>
+                <p>:نام مشتری</p>
+              </div>
+              <div className="all price">
+                <p>{data.price}</p>
+                <p>:قیمت</p>
+              </div>
+              <div className="all status">
+                <p>{data.status}</p>
+                <p>:وضعیت</p>
+              </div>
+              <div className="all time">
+                <p>{data.updated}</p>
+                <p>:تاریخ سفارش</p>
+              </div>
+            </div>
+          ))}
           <button
             className="back"
             onClick={() => {
@@ -74,9 +102,8 @@ const Card = styled.div`
   background-color: brown;
   .all {
     width: 75%;
-    height: 30px;
+    height: 50px;
     background-color: #ddd;
-    border-radius: 5px;
     padding-left: 5px;
     padding-right: 5px;
     display: flex;
@@ -96,5 +123,20 @@ const Card = styled.div`
     font-size: 15px;
     font-family: 'Vazir';
     cursor: pointer;
+  }
+  .gg {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 30px;
+  }
+  .name {
+    border-radius: 5px 5px 0px 0px;
+  }
+  .time {
+    border-radius: 0px 0px 5px 5px;
   }
 `
