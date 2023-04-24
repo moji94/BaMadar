@@ -21,7 +21,7 @@ export default function Main(token: any) {
         <CreateProd token={token}></CreateProd>
         <GetOrders token={token}></GetOrders>
         <GetSingleOrder token={token}></GetSingleOrder>
-        <GetUsers></GetUsers>
+        <GetUsers token={token}></GetUsers>
       </Holder>
     </Container>
     // {/* </Layout> */}

@@ -1,9 +1,34 @@
 import styled, { css } from 'styled-components'
-import { adminPos } from '@/stores/store'
+import { adminPos, karbar } from '@/stores/store'
 import { useAtom } from 'jotai'
+import { useCallback, useEffect, useState } from 'react'
+import axios, { AxiosError } from 'axios'
+import { config } from '@/utils/main'
 
-export const GetUsers = (): JSX.Element => {
+export const GetUsers = ({ token }: any): JSX.Element => {
   const [ac, setAc] = useAtom(adminPos)
+  const [user, setUser] = useState<[]>([])
+  const [kar, setKar] = useAtom(karbar)
+
+  const getuser = useCallback(async () => {
+    try {
+      const res = await axios.post(`${config}/GetUsers`)
+      if (res.status == 200) {
+        setUser(res.data)
+        console.log(user)
+      } else if (res.status == 400) {
+        console.log(res.config.data)
+      } else {
+        console.log('error 500')
+      }
+    } catch (e) {
+      const err = e as AxiosError
+      console.log(err)
+    }
+  }, [kar])
+  useEffect(() => {
+    getuser()
+  }, [token])
   return (
     <Container ac={ac}>
       <div
@@ -18,11 +43,19 @@ export const GetUsers = (): JSX.Element => {
       </div>
       {ac === 'Gusers' ? (
         <Card>
-          <div className="all">
-            <p>9166467731</p>
-            <p>60000</p>
-            <p>مجتبی</p>
-          </div>
+          {user.map((data: any, index: any) => (
+            <div
+              className="all"
+              key={index}
+              onClick={() => {
+                setKar(data.id)
+              }}
+            >
+              <p>0{data.phone}</p>
+              <p>{data.balance}</p>
+              <p>{data.name}</p>
+            </div>
+          ))}
         </Card>
       ) : (
         <div></div>
