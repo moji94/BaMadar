@@ -12,7 +12,7 @@ export const Banner = (): JSX.Element => {
             className="leftTB"
           />
           <img
-            src="/images/leftBB.gif"
+            src="/images/leftBB.jpg"
             alt="Picture of the author"
             className="leftBB"
           />
